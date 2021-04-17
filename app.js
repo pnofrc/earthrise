@@ -25,7 +25,8 @@ var firefoxIcon = L.icon({
 var textbox = $('<input type="text" placeholder="codeword" />').keyup(function () {
     // if (event.keyCode === 13) {
     if (event.keyCode === 13 && $(textbox).val() === "test"){
-     alert('IT WORKS')
+    //  alert('IT WORKS')
+     $( "#image" ).click();
      textbox.replaceWith($(textbox).val());
      }
 })[0];
