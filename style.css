@@ -45,3 +45,67 @@ html, body, #map {
     position: relative;
     z-index: 5;
 }
+
+#choice{
+    display: none;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(129deg, #56246625, #3f6dc261, #3fc2ae70, #22243356);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 14s ease infinite;
+    -moz-animation: AnimationName 14s ease infinite;
+    -o-animation: AnimationName 14s ease infinite;
+    animation: AnimationName 14s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:42% 0%}
+    50%{background-position:59% 100%}
+    100%{background-position:42% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:42% 0%}
+    50%{background-position:59% 100%}
+    100%{background-position:42% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:42% 0%}
+    50%{background-position:59% 100%}
+    100%{background-position:42% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:42% 0%}
+    50%{background-position:59% 100%}
+    100%{background-position:42% 0%}
+}
+
+
+.flex{
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#title{
+font-size: 10vw;
+color: red
+}
+
+button{
+    background-color: rgba(0,0,100,.1);
+    width: 30%;
+    margin: 20vw auto ;
+    font-size: 4vw;
+}
+
+#close{
+    width: 50%;
+
+    font-size: 6vw;
+}

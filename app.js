@@ -1,3 +1,5 @@
+
+
 //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values 
 var map = L.map('map', { scrollWheelZoom: false }).setView([51.90887172801163, 4.486906527767172], 13);
 
@@ -66,9 +68,38 @@ $(document).ready(function() {
     }
     play_music_button.addEventListener("click", playAudio);
 
+
+      
+    // function choiceToggle2(){}
+    //   if(choice.css('display', 'inline-block')) {
+    //     choice.css('display', 'none')
+    //   }
+    // }
+
+
 });
 
 
 L.easyButton('fa-globe', function(btn, map){
     $( "#image" ).click();
 }).addTo(map);
+
+
+
+L.easyButton('fa-globe', function(btn, map){
+    choiceToggle();
+    // choiceToggle2();
+}).addTo(map);
+
+var choice = $( "#choice" );
+
+function choiceToggle() {
+  if (choice.css('display', 'none') ) {
+    choice.css('display', 'inline-block')
+  } else if( choice.css('display', 'inline-block')) {
+    choice.css('display', 'none')
+  }}
+
+  function closeMe(){
+    choice.css('display', 'none')
+  }

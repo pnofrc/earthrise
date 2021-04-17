@@ -24,15 +24,37 @@
         <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
         <script src="lightbox.js"></script>   
         <link href="lightbox.css" rel="stylesheet" />    
-    </head>
-    <body>
-        
-        
-        <!-- <input id="input" type="text" placeholder="codeword" /> -->
-        <a href="image.jpg" id="image" data-lightbox="roadtrip" style="z-index: -10; position: absolute;">Image #2</a>
 
+    </head>
+
+    <body>
+
+        <div id="choice" style="position: absolute; z-index: 300;">
+
+            <div class="flex">
+                <p id="title">TEST</p>
+            </div>
+
+            <div class="flex">
+                <p id="quest">Lorem ipsum dolor sit amet...Lorem ipsum dolor sit amet...Lorem ipsum dolor sit amet...Lorem ipsum dolor sit amet...</p>
+            </div>
+
+            <div class="flex">
+                <button id="firstChoice">Lorem ipsum dolor sit amet...</button>
+                <button id="secondChoice">Lorem ipsum dolor sit amet...</button>
+                <button id="thirdChoice">Lorem ipsum dolor sit amet...</button>
+            </div>
+
+            <div class="flex">
+                <button id="close" onclick="closeMe()">Close Me</button>
+            </div>
+
+        </div>
+
+        <a href="image.jpg" id="image" data-lightbox="roadtrip" style="z-index: -10; position: absolute;"></a>
+        
         <div id="map"></div>
-       
+
         
         <audio id="mp3" src="chinatown.mp3" type="audio/mp3"></audio>
         <script src="app.js" async defer></script>
