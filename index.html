@@ -14,10 +14,29 @@
 
         <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    
     </head>
     <body>
-        <div id="map"></div>
         
+        
+        <div class="main">
+            <!-- <button>test</button> -->
+            <p class="text"></p>
+        </div>
+
+        <div id="map"></div>
+        <div class="leaflet-bottom leaflet-left">
+            <button ion-button class="button-action" onclick="Action()"  block>Action!</button>
+        </div>
+
         <script src="app.js" async defer></script>
     </body>
 </html>

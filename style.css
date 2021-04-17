@@ -1,3 +1,11 @@
+:root{
+    --main: white;
+}
+
+*{    
+    font-family: Arial, Helvetica, sans-serif
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -5,4 +13,35 @@ body {
 html, body, #map {
     height: 100%;
     width: 100vw;
+}
+
+#map{
+    /* position: relative; */
+    /* z-index: 0; */
+}
+
+.main{
+    position: fixed;
+    z-index: 5;
+    border: solid red 2px;
+    /* padding: 20%; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+
+    background-color: rgba(0,0,100,.4);
+    color: var(--main);
+    font-size: 10vw;
+    display: none;
+    
+}
+
+.text{
+    position: relative;
+    z-index: 5;
 }
