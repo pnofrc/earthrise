@@ -64,94 +64,10 @@ $(document).ready(function() {
       });
     }
     play_music_button.addEventListener("click", playAudio);
-  });
+
+});
 
 
-
-
-
-
-
-// var svg1 = '<svg width="100" height="100"><circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /></svg>'
-// var svg2 ='<svg width="400" height="100"><rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" /></svg>'
-// $('.main').append(svg1).append(svg2)
-
-
-
-// // MAP
-
-// var map = L.map('map').fitWorld();
-
-// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//     maxZoom: 20,
-//     tileSize: 512,
-//     zoomOffset: -1
-// }).addTo(map);
-
-
-
-
-
-
-
-
-// // FIRST AREA
-
-// first = L.circle([51.91108023330129, 4.505694187776665], {radius: 20}).addTo(map);
-// // var firstmarker = new L.Marker([51.91108023330129, 4.505694187776665]);
-// // firstmarker.addTo(map);
-
-// // function getLocation() {
-// //     if (navigator.geolocation) {
-// //       navigator.geolocation.getCurrentPosition(showPosition);
-// //     } else { 
-// //       console.log("Geolocation is not supported by this browser.")
-// //     }
-// //   }
-  
-// //   function showPosition(position) {
-// //     console.log(position.coords.latitude + "," + position.coords.longitude)
-// //     // return(position.coords.latitude + "," + position.coords.longitude)
-// //   }
-
-//   L.easyButton('fa-globe', function(btn, map){
-//     helloPopup.setLatLng(map.getCenter()).openOn(map);
-//     getLocation()
-// }).addTo(map);
-
-
-
-
-
-// //   second = showPosition(position)
-
-// // TRIG
-
-// var circleLatLng = first.getLatLng();
-// var markerLatLng = second.getLatLng();
-// var distance = circleLatLng.distanceTo(markerLatLng);
-// console.log(distance)
-
-
-// // DRAW PATH
-// var latlngs = [
-//     [51.91108023330129, 4.505694187776665],
-//     [51.918915787021625, 4.509814060563369],
-// ];
-// var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
-// map.fitBounds(polyline.getBounds());
-
-
-// // BUTTON TEST
-
-// // var helloPopup = L.popup().setContent( "<img src=" + "test.jpg" + "/>");
-
-// // L.easyButton('fa-globe', function(btn, map){
-// //     helloPopup.setLatLng(map.getCenter()).openOn(map);
-// // }).addTo(map);
-
-// // .bindPopup( "<img src=" + icon_url + "/>")
-
-// // var imageUrl = 'http://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
-// // imageBounds = [[51.91899820834415, 4.508602176439348], [51.91873806375575, 4.507421190158097]];
-// // L.imageOverlay(imageUrl, imageBounds).addTo(map);
+L.easyButton('fa-globe', function(btn, map){
+    $( "#image" ).click();
+}).addTo(map);
