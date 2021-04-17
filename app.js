@@ -41,7 +41,7 @@ var customOptions =
 L.marker([51.91108023330129, 4.505694187776665], { icon: firefoxIcon }).bindPopup(textbox, customOptions).addTo(map);
 
 $(document).ready(function() {
-    L.easyButton('fa-globe', function(btn, map){
+    L.easyButton('<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg" style="width:15px">', function(btn, map){
         // document.getElementById("mp3").onplay();
         playAudio()
     }).addTo(map);
