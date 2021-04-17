@@ -1,15 +1,32 @@
 :root{
-    --main: white;
+    --main: rgb(255, 255, 255);
+    --sec: rgb(81, 5, 233);
+
 }
 
+@font-face {
+    font-family: H_exp;
+    src: url(SpratExtnMedium.woff);
+  }
+
+@font-face {
+    font-family: H_thin;
+    src: url(SpratRegular.woff);
+  }
+
 *{    
-    font-family: Arial, Helvetica, sans-serif
+    font-family: H_exp;
+    color: black;
+
 }
+
+
 
 body {
     padding: 0;
     margin: 0;
 }
+
 html, body, #map {
     height: 100%;
     width: 100vw;
@@ -19,27 +36,6 @@ html, body, #map {
     position: relative; 
      z-index: 0;
 } 
-
-.main{
-    position: fixed;
-    z-index: 5;
-    border: solid red 2px;
-    /* padding: 20%; */
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100vw;
-    height: 100vh;
-    margin: auto;
-
-    background-color: rgba(0,0,100,.4);
-    color: var(--main);
-    font-size: 10vw;
-    display: none;
-    
-}
 
 .text{
     position: relative;
@@ -51,36 +47,40 @@ html, body, #map {
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(129deg, #56246625, #3f6dc261, #3fc2ae70, #22243356);
+    
+    max-width: 99%;
+    max-height: 94%;
+    background: linear-gradient(129deg, #5624668c, #3f6dc2b5, #3fc2aecd, #222433c9);
     background-size: 800% 800%;
+    padding: 3vw;
+    border: 10px double var(--main);
+    
 
-    -webkit-animation: AnimationName 14s ease infinite;
-    -moz-animation: AnimationName 14s ease infinite;
-    -o-animation: AnimationName 14s ease infinite;
-    animation: AnimationName 14s ease infinite;
+    -webkit-animation: backGradient 5s ease infinite;
+    -moz-animation: backGradient 5s ease infinite;
+    -o-animation: backGradient 5s ease infinite;
+    animation: backGradient 5s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:42% 0%}
-    50%{background-position:59% 100%}
-    100%{background-position:42% 0%}
+@-webkit-keyframes backGradient {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
 }
-@-moz-keyframes AnimationName {
-    0%{background-position:42% 0%}
-    50%{background-position:59% 100%}
-    100%{background-position:42% 0%}
+@-moz-keyframes backGradient {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
 }
-@-o-keyframes AnimationName {
-    0%{background-position:42% 0%}
-    50%{background-position:59% 100%}
-    100%{background-position:42% 0%}
+@-o-keyframes backGradient {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
 }
-@keyframes AnimationName {
-    0%{background-position:42% 0%}
-    50%{background-position:59% 100%}
-    100%{background-position:42% 0%}
+@keyframes backGradient {
+    0%{background-position:0% 48%}
+    50%{background-position:100% 53%}
+    100%{background-position:0% 48%}
 }
 
 
@@ -89,23 +89,65 @@ html, body, #map {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: left;
+}
 
+.flex:nth-child(2){
+    margin-top: 12vw;
+}
+
+p{
+    margin-left: 5vw;
+    text-shadow: 2px 2px 4px #f5f1f1;
+    line-height: 7vw;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif */
+    /* font-stretch: ultra-expanded; */
 }
 
 #title{
-font-size: 10vw;
-color: red
+font-size: 9vw;
+color: var(--sec);
+font-family: H_exp;
+text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+
+    1px 10px 3px rgba(16,16,16,0.4),
+    1px 12px 10px rgba(16,16,16,0.2),
+    1px 15px 20px rgba(16,16,16,0.2),
+    1px 20px 30px rgba(16,16,16,0.4);
 }
 
-button{
-    background-color: rgba(0,0,100,.1);
+#choice button{
+    background-color:rgba(205, 61, 61, 0.219);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(130, 130, 130, 0.7);
+    padding: .5vw 1vw;
     width: 30%;
-    margin: 20vw auto ;
+    margin: 20vw 1vw ;
     font-size: 4vw;
+    padding: 2%;
+    text-shadow: .5px .5px 1px #f5f1f193;
+
 }
 
-#close{
+/* #close{
     width: 50%;
-
+    background-color:rgba(171, 107, 107, 0.4);
+    color: var(--sec);
     font-size: 6vw;
+} */
+
+#map{
+    filter: drop-shadow(16px 16px 20px red) invert(95%);
+}
+
+.leaflet-control-attribution a{
+    font-size: 10px;
+    pointer-events: none;
+    color: var(--sec);
 }

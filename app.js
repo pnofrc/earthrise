@@ -5,7 +5,7 @@ var map = L.map('map', { scrollWheelZoom: false }).setView([51.90887172801163, 4
 
 //  add base map tiles from OpenStreetMap and attribution info to 'map' div
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a>'
 }).addTo(map);
 
 // GPS ON
@@ -23,13 +23,23 @@ var firefoxIcon = L.icon({
     popupAnchor: [0, -15]
 });
 
+     // future foreach
+     var newIcon = L.icon({
+        iconUrl: 'http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png',
+        iconSize: [100, 45], // size of the icon
+        popupAnchor: [0, -15]
+        });
+
+
 // Create a TextBox with an attached event
 var textbox = $('<input type="text" placeholder="codeword" />').keyup(function () {
     // if (event.keyCode === 13) {
     if (event.keyCode === 13 && $(textbox).val() === "test"){
-    //  alert('IT WORKS')
-     $( "#image" ).click();
-     textbox.replaceWith($(textbox).val());
+        choiceToggle()
+     
+     marker.removeFrom(map)
+     levelCompleted.addTo(map)
+
      }
 })[0];
 
@@ -41,9 +51,12 @@ var customOptions =
     }
 
 // create marker object, pass custom icon as option, pass content and options to popup, add to map
-L.marker([51.91108023330129, 4.505694187776665], { icon: firefoxIcon }).bindPopup(textbox, customOptions).addTo(map);
+var marker = L.marker([51.91108023330129, 4.505694187776665], { icon: firefoxIcon }).bindPopup(textbox, customOptions).addTo(map);
+var levelCompleted = L.marker([51.91108023330129, 4.505694187776665], { icon: newIcon }).bindPopup(textbox, customOptions);
+
 
 $(document).ready(function() {
+
     L.easyButton('<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg" style="width:15px">', function(btn, map){
         // document.getElementById("mp3").onplay();
         playAudio()
@@ -66,7 +79,7 @@ $(document).ready(function() {
         play_music_button.className = 'play';
       });
     }
-    play_music_button.addEventListener("click", playAudio);
+    // play_music_button.addEventListener("click", playAudio);
 
 
       
@@ -86,20 +99,20 @@ L.easyButton('fa-globe', function(btn, map){
 
 
 
-L.easyButton('fa-globe', function(btn, map){
-    choiceToggle();
-    // choiceToggle2();
-}).addTo(map);
+// L.easyButton('fa-globe', function(btn, map){
+//     choiceToggle()
+//     // choiceToggle2();
+// }).addTo(map);
 
 var choice = $( "#choice" );
 
 function choiceToggle() {
   if (choice.css('display', 'none') ) {
-    choice.css('display', 'inline-block')
-  } else if( choice.css('display', 'inline-block')) {
-    choice.css('display', 'none')
-  }}
+    choice.fadeIn();
+    // choice.css('display', 'inline');
+  } }
 
   function closeMe(){
-    choice.css('display', 'none')
+    choice.fadeOut();
+    $( "#image" ).click();
   }
