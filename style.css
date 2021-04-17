@@ -96,6 +96,10 @@ html, body, #map {
     margin-top: 12vw;
 }
 
+.flex:nth-child(3){
+    flex-direction: column;
+}
+
 p{
     margin-left: 5vw;
     text-shadow: 2px 2px 4px #f5f1f1;
@@ -127,8 +131,8 @@ text-shadow: 1px 1px 1px #919191,
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(130, 130, 130, 0.7);
     padding: .5vw 1vw;
-    width: 30%;
-    margin: 20vw 1vw ;
+    width: 70%;
+    margin: 10vw 0 ;
     font-size: 4vw;
     padding: 2%;
     text-shadow: .5px .5px 1px #f5f1f193;
