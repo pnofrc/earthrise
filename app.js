@@ -148,7 +148,7 @@ map.addControl(L.control.locate({
 }}));
 
 // SHOW PIC AT RELOAD
-if (Object.entries(co).length != 7){
+if (Object.entries(co).length != 6){
   $( "#image" ).click();
 }
 
