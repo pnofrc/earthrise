@@ -92,9 +92,9 @@ html, body, #map {
     text-align: left;
 }
 
-.flex:nth-child(2){
-    margin-top: 12vw;
-}
+/* .flex:nth-child(2){
+     margin-top: 12vw; 
+} */
 
 .flex:nth-child(3){
     flex-direction: column;
@@ -109,7 +109,7 @@ p{
 }
 
 #title{
-font-size: 600px;
+font-size: 40px;
 color: var(--sec);
 font-family: H_exp;
 text-shadow: 1px 1px 1px #919191,
@@ -120,10 +120,10 @@ text-shadow: 1px 1px 1px #919191,
         1px 6px 1px #919191,
         1px 7px 1px #919191,
 
-    1px 10px 3px rgba(16,16,16,0.4),
-    1px 12px 10px rgba(16,16,16,0.2),
-    1px 15px 20px rgba(16,16,16,0.2),
-    1px 20px 30px rgba(16,16,16,0.4);
+    1px 10px 3px rgba(103, 89, 89, 0.4),
+    1px 12px 10px rgba(255, 254, 254, 0.2),
+    1px 15px 20px rgba(101, 92, 92, 0.331),
+    1px 20px 30px rgba(66, 63, 63, 0.4);
 }
 
 #choice button{
@@ -132,7 +132,7 @@ text-shadow: 1px 1px 1px #919191,
     box-shadow: 5px 5px 10px rgba(130, 130, 130, 0.7);
     padding: .5vw 1vw;
     width: 70%;
-    margin: 10vw 0 ;
+    margin: 3vw 0 ;
     font-size: 4vw;
     padding: 2%;
     text-shadow: .5px .5px 1px #f5f1f193;
