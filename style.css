@@ -51,7 +51,7 @@ html, body, #map {
     width: 99%;
    height: 94vh;
     background: linear-gradient(129deg, #5624668c, #3f6dc2b5, #3fc2aecd, #222433c9);
-    background-size: 200% 200%;
+    background-size: 800% 800%;
     padding: 3vw;
     border: 10px double var(--main);
     
