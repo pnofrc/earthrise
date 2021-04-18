@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
 
@@ -150,6 +152,12 @@ map.addControl(L.control.locate({
 // SHOW PIC AT RELOAD
 if (Object.entries(co).length != 6){
   $( "#image" ).click();
+} else if (Object.entries(co).length == 6){
+
+  var intro = $( "#intro" );
+  if (intro.css('display', 'none') ) {
+    intro.fadeIn();
+  } 
 }
 
 
@@ -268,6 +276,7 @@ if (ol == 5){
   Cookies.set("x7","x7")
   console.log("ci")
 }
+
 
 });  
 

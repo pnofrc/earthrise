@@ -31,7 +31,12 @@
 
     <body>
 
-        <div id="choice" style="position: absolute; z-index: 300;">
+        <div class="textandstuff" id="intro" style="position: absolute; z-index: 300;">blablabla inizio
+            <div class="flex">
+            <button id="close" onclick="closeIntro()">Close Me</button>
+        </div></div>
+
+        <div class="textandstuff" id="choice" style="position: absolute; z-index: 300;">
 
             <div class="flex">
                 <h1 id="title"></h1>
@@ -47,9 +52,6 @@
                 <button id="thirdChoice" onclick="closeMe()"></button>
             </div>
 
-            <!-- <div class="flex">
-                <button id="close" onclick="closeMe()">Close Me</button>
-            </div> -->
 
         </div>
 
@@ -65,6 +67,11 @@
             $( "#choice" ).fadeOut();
             location.reload();
           }
+        function closeIntro(){
+            $( "#intro" ).fadeOut();
+        }
+
+
           </script>
     </body>
 </html>
