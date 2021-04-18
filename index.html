@@ -25,6 +25,8 @@
         <script src="lightbox.js"></script>   
         <link href="lightbox.css" rel="stylesheet" />    
 
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
     </head>
 
     <body>
@@ -32,17 +34,17 @@
         <div id="choice" style="position: absolute; z-index: 300;">
 
             <div class="flex">
-                <h1 id="title">earthrize</h1>
+                <h1 id="title"></h1>
             </div>
 
             <div class="flex">
-                <p id="quest">In a silent sanctuary a gentle whisper wakes me up. “Zero Emissions... one breath at a time” is repeated endlessly as a mantra.</p>
+                <p id="quest"></p>
             </div>
 
             <div class="flex">
-                <button id="firstChoice" onclick="closeMe()">Lorem ipsum dolor sit amet... </button>
-                <button id="secondChoice" onclick="closeMe()">Lorem ipsum dolor sit amet... </button>
-                <button id="thirdChoice" onclick="closeMe()">Lorem ipsum dolor sit amet... </button>
+                <button id="firstChoice" onclick="closeMe()"></button>
+                <button id="secondChoice" onclick="closeMe()"></button>
+                <button id="thirdChoice" onclick="closeMe()"></button>
             </div>
 
             <!-- <div class="flex">
@@ -51,12 +53,18 @@
 
         </div>
 
-        <a href="image.jpg" id="image" data-lightbox="roadtrip" style="z-index: -10; position: absolute;"></a>
+        <a href="" id="image" data-lightbox="roadtrip" style="z-index: -10; position: absolute;"></a>
         
         <div id="map"></div>
 
         
         <audio id="mp3" src="chinatown.mp3" type="audio/mp3"></audio>
         <script src="app.js" async defer></script>
+        <script defer>  
+        function closeMe(){
+            $( "#choice" ).fadeOut();
+            location.reload();
+          }
+          </script>
     </body>
 </html>
