@@ -41,19 +41,19 @@ var button = {
     "x7":["1","2","3"]
 }
 var icons = {
-    "x1":"https://upload.wikimedia.org/wikipedia/commons/b/b0/Letters_SVG.svg",
-    "x2":"https://commons.wikimedia.org/wiki/Help:SVG#/media/File:SMW_Logo.SVG",
+    "x1":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
+    "x2":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
     "x3":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
-    "x4":"https://upload.wikimedia.org/wikipedia/commons/9/9b/MediaWiki.svg",
-    "x5":"https://en.wikipedia.org/wiki/Scalable_Vector_Graphics#/media/File:Bitmap_VS_SVG.svg",
-    "x6":"https://commons.wikimedia.org/wiki/File:%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D1%87%D0%B5%D1%80%D1%82%D0%B5%D0%B6%D0%B0_%D0%B2_SVG_%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B5.svg#/media/File:Пример_чертежа_в_SVG_формате.svg",
-    "x7":"https://commons.wikimedia.org/wiki/Category:SVG#/media/File:Skip_to_left3.svg"
+    "x4":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
+    "x5":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
+    "x6":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
+    "x7":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg"
 }
 
 var customIcon= {
   "x1":["image.jpg","2","3"],
-  "x2":["1","2","3"],
-  "x3":["1","2","3"],
+  "x2":["https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg","2","3"],
+  "x3":['<svg width="100" height="100"> <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /></svg>',"2","3"],
   "x4":["1","2","3"],
   "x5":["1","2","3"],
   "x6":["1","2","3"],
@@ -103,6 +103,7 @@ console.log("current:"+(co[Object.keys(co)[0]]))
 let places = ["x1","x2","x3","x4","x5","x6"];
 let oldPlaces = []
 
+
 function showCompleted(){
   for( var l = 0; l < places.length; l++){ 
     if (!Object.keys(co).includes(places[l])) { 
@@ -111,7 +112,6 @@ function showCompleted(){
 }
 
 showCompleted();
-console.log(oldPlaces);
 
 
 
@@ -124,7 +124,10 @@ $("#thirdChoice").append(button[current][2]);
 $("#quest").append(text[current]);
 $("#title").append(title[current]);
 
-$('#image').attr('href', customIcon[current][0]);
+
+let customIconProg = customIcon["x1"][0]  
+
+$('#image').attr('href', customIconProg);
 
 
 // MAP
@@ -214,6 +217,8 @@ for (p = 0; p<oldPlaces.length;p++){
   let marker = new L.Marker(markerLocation, {icon: prevIcon});
   marker.bindPopup(title[neo]);
   map.addLayer(marker)
+
+
 }
 
 
@@ -253,5 +258,16 @@ function choiceToggle() {
   if (choice.css('display', 'none') ) {
     choice.fadeIn();
   } }
+
+
+
+//LAST LOCATION
+
+let ol = oldPlaces.length
+if (ol == 5){
+  Cookies.set("x7","x7")
+  console.log("ci")
+}
+
 });  
 
