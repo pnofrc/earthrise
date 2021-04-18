@@ -185,6 +185,13 @@ let currentLong = (coord[current][0]);
 let currentLat = (coord[current][1])
 // console.log(currentLong,currentLat)
 
+// CUSTOM ICON
+var currentIcon = L.icon({
+  iconUrl: icons[current],
+  iconSize: [38, 95], // size of the icon
+  popupAnchor: [0, -15]
+});
+
 // CURRENT POSTITION
 var marker = L.marker([currentLong,currentLat], { icon: currentIcon }).bindPopup(textbox, customOptions).addTo(map);
 
@@ -193,12 +200,18 @@ var marker = L.marker([currentLong,currentLat], { icon: currentIcon }).bindPopup
 
 for (p = 0; p<oldPlaces.length;p++){
   let neo = oldPlaces[p]
+
+  var prevIcon = L.icon({
+    iconUrl: newIcon[neo],
+    iconSize: [50, 25], // size of the icon
+    popupAnchor: [0, -15]
+  });
+
   let lon = coord[neo][0];
   let lat = coord[neo][1];
-  var img = newIcon[neo]
 
   let markerLocation = new L.LatLng(lon,lat);
-  let marker = new L.Marker(markerLocation, {img});
+  let marker = new L.Marker(markerLocation, {icon: prevIcon});
   marker.bindPopup(title[neo]);
   map.addLayer(marker)
 }
