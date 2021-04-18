@@ -1,19 +1,6 @@
-
-
-
-// //to delete the current cookie when you pass the level
-// function deleteItem(){
-//   completed.push(co[Object.keys(co)[0]]);
-//   console.log(completed);
-  // Cookies.remove(co[Object.keys(co)[0]]);
-// }
-
 $(document).ready(function() {
 
-  // var completed = [];
 
-
-  
 // DICTIONARIES
 
 
@@ -73,6 +60,16 @@ var customIcon= {
   "x7":["1","2","3"]
 }
 
+var newIcon = {
+  "x1":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+  "x2":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+  "x3":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+  "x4":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+  "x5":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+  "x6":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+  "x7": "http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+}
+
 // SHUFFLE
 
 function shuffleArray(arr) {
@@ -91,21 +88,31 @@ function checkCookies(){
       let r = arr[c].toString() 
       Cookies.set(r,r)
       }
-      
   }
-
 }
-
-// Cookies.remove("x7")
-
-Cookies.set("x7","x7")
 
 checkCookies()
 
 console.log(co)
 
 // current x^n
-console.log(co[Object.keys(co)[0]])
+console.log("current:"+(co[Object.keys(co)[0]]))
+
+
+//Show completed places
+let places = ["x1","x2","x3","x4","x5","x6"];
+let oldPlaces = []
+
+function showCompleted(){
+  for( var l = 0; l < places.length; l++){ 
+    if (!Object.keys(co).includes(places[l])) { 
+      oldPlaces.push(places[l])
+    }}
+}
+
+showCompleted();
+console.log(oldPlaces);
+
 
 
 // SET CURRENT STATE
@@ -150,22 +157,10 @@ var currentIcon = L.icon({
     popupAnchor: [0, -15]
 });
 
-// future foreach
-var newIcon = L.icon({
-  iconUrl: 'http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png',
-  iconSize: [100, 45], // size of the icon
-  popupAnchor: [0, -15]
-  });
-
-
-
 
 //to delete the current cookie when you pass the level
 function deleteItem(){
-  completed.push(co[Object.keys(co)[0]]);
-  console.log(completed);
-  console.log('ca')
-  Cookies.remove(co[Object.keys(co)[0]]);
+  Cookies.remove(co[Object.keys(co)[0]]);  
 }
 
 
@@ -175,8 +170,6 @@ var textbox = $('<input type="text" placeholder="codeword" />').keyup(function (
     choiceToggle()
     deleteItem()
     marker.removeFrom(map)
-    levelCompleted.addTo(map)
-    // deleteItem()
    }
 })[0];
 
@@ -188,21 +181,27 @@ var customOptions =
     }
 
 // New Icon's Places
-
 let currentLong = (coord[current][0]);
 let currentLat = (coord[current][1])
-console.log(currentLong,currentLat)
+// console.log(currentLong,currentLat)
 
-// console.log(currentCoord)
-
+// CURRENT POSTITION
 var marker = L.marker([currentLong,currentLat], { icon: currentIcon }).bindPopup(textbox, customOptions).addTo(map);
 
 
-//icon[element]
-// completed.forEach(element => {
-// });
- var levelCompleted= L.marker([coord[current][0],coord[current][1]], { icon: newIcon }).bindPopup(textbox, customOptions);
+//PREVIOUS PLACES
 
+for (p = 0; p<oldPlaces.length;p++){
+  let neo = oldPlaces[p]
+  let lon = coord[neo][0];
+  let lat = coord[neo][1];
+  var img = newIcon[neo]
+
+  let markerLocation = new L.LatLng(lon,lat);
+  let marker = new L.Marker(markerLocation, {img});
+  marker.bindPopup(title[neo]);
+  map.addLayer(marker)
+}
 
 
 var music = document.getElementById("mp3");
@@ -224,7 +223,6 @@ function playAudio() {
 }
 
 L.easyButton('<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg" style="width:15px">', function(btn, map){
-    // document.getElementById("mp3").onplay();
     playAudio()
 }).addTo(map);
 
@@ -242,7 +240,5 @@ function choiceToggle() {
   if (choice.css('display', 'none') ) {
     choice.fadeIn();
   } }
-
-
 });  
 
