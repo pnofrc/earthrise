@@ -5,13 +5,8 @@
 }
 
 @font-face {
-    font-family: H_exp;
-    src: url(SpratExtnMedium.woff);
-  }
-
-@font-face {
-    font-family: H_thin;
-    src: url(SpratRegular.woff);
+    font-family: title;
+    src: url("Autopia-Italic.otf");
   }
 
 @font-face {
@@ -117,7 +112,7 @@ p{
 #title{
 /* font-size: 40px; */
 color: var(--sec);
-font-family: H_exp;
+font-family: title;
 text-shadow: 1px 1px 1px #919191,
         1px 2px 1px #919191,
         1px 3px 1px #919191,

@@ -8,76 +8,76 @@ $(document).ready(function() {
 
   // DICTIONARIES
   var coord = {
-      "x1": [51.915739376726094, 4.4724347950698755],
-      "x2": [51.893074458581886, 4.468314922191115],
-      "x3": [51.903031485265195, 4.501617227961103],
-      "x4": [51.91383342223832, 4.504707132620174],
-      "x5": [51.912350957259285, 4.5246198515341876],
-      "x6": [51.890319997776686, 4.505050455360071],
-      "x7": [51.915739376726094, 4.468658244931011]
+      "x1": [51.914444, 4.470009], //DW
+      "x2": [51.906289, 4.442124], //DW
+      "x3": [51.906333, 4.492452], //DF
+      "x4": [51.928074, 4.476836], //DF
+      "x5": [51.912516, 4.501322], //PG
+      "x6": [51.928861, 4.480778], //PG
+      "x7": [51.916006, 4.476677] //END
   }
 
   var title = {
-      "x1":"Location1.1",
-      "x2":"Location1.2",
-      "x3":"Location2.1",
-      "x4":"Location2.2",
-      "x5":"Location3.1",
-      "x6":"Location3.2",
-      "x7":"LocationEnd"
+      "x1":"Dragonfly \ Het Nieuwe Instituut", //DW
+      "x2":"Dragonfly \ Dakpark", //DW
+      "x3":"Dolphin Waves \ Floating Pavilion", //DF
+      "x4":"Dolphin Waves \ Benthemplein", //DF
+      "x5":"Project Gecko \ Hef Park", //PG
+      "x6":"Project Gecko \ Almondestraat", //PG
+      "x7":"The Roof" //END
   }
 
   // change text to audio tag
-  var text = {
-      "x1":"Lorem",
-      "x2":"ipsum",
-      "x3":"dolor",
-      "x4":"sit",
-      "x5":"amet",
-      "x6":"mmmmm",
-      "x7":"genau"
+  var audio = {
+      "x1":"siesta LIV.mp3", //DW
+      "x2":"siesta LIV.mp3", //DW
+      "x3":"siesta LIV.mp3", //DF
+      "x4":"siesta LIV.mp3", //DF
+      "x5":"siesta LIV.mp3", //PG
+      "x6":"siesta LIV.mp3", //PG
+      "x7":"siesta LIV.mp3"
   }
 
   var button = {
-      "x1":["1","2"],
-      "x2":["1","2"],
-      "x3":["1","2"],
-      "x4":["1","2"],
-      "x5":["1","2"],
-      "x6":["1","2"],
+      "x1":["1","2"], //DW
+      "x2":["1","2"], //DW
+      "x3":["1","2"], //DF
+      "x4":["1","2"], //DF
+      "x5":["1","2"], //PG
+      "x6":["1","2"], //PG
       "x7":["1","2"]
   }
 
 // black point
   var icons = {
-      "x1":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
-      "x2":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
-      "x3":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
-      "x4":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
-      "x5":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
-      "x6":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg",
-      "x7":"https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg"
+      "x1":"icons/newlocation.png",
+      "x2":"icons/newlocation.png",
+      "x3":"icons/newlocation.png",
+      "x4":"icons/newlocation.png",
+      "x5":"icons/newlocation.png",
+      "x6":"icons/newlocation.png",
+      "x7":"icons/newlocation.png"
   }
 
   var customIcon= {
-    "x1":["image.jpg","2"],
-    "x2":["https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg","2"],
-    "x3":['<svg width="100" height="100"> <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /></svg>',"2"],
-    "x4":["1","2"],
-    "x5":["1","2"],
-    "x6":["1","2"],
+    "x1":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg"],
+    "x2":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg"],
+    "x3":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg'],
+    "x4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg'],
+    "x5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg"],
+    "x6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg"],
     "x7":["1","2"]
   }
 
-  //black points
+  //colored points
   var newIcon = {
-    "x1":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
-    "x2":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
-    "x3":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
-    "x4":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
-    "x5":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
-    "x6":"http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
-    "x7": "http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png",
+    "x1":"icons/DolphinWaves.png", //DW
+    "x2":"icons/DolphinWaves.png", //DW
+    "x3":"icons/DragonFly.png", //DF
+    "x4":"icons/DragonFly.png", //DF
+    "x5":"icons/ProjectGecko.png", //PG
+    "x6":"icons/ProjectGecko.png", //PG
+    "x7": "http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png", 
   }
 
   // SHUFFLE
@@ -106,7 +106,7 @@ $(document).ready(function() {
   console.log(co)
 
   // current x^n
-  console.log("current:"+(co[Object.keys(co)[0]]))
+  console.log("current: "+(co[Object.keys(co)[0]]))
 
 
   //Show completed places
@@ -130,7 +130,7 @@ $(document).ready(function() {
   $("#firstChoice").append(button[current][0]);
   $("#secondChoice").append(button[current][1]);
 
-  $("#quest").append(text[current]);
+  $('#quest').attr('src', audio[current]);
   $("#title").append(title[current]);
 
 
@@ -148,10 +148,12 @@ $(document).ready(function() {
   var map = L.map('map', { scrollWheelZoom: false }).setView([51.90887172801163, 4.486906527767172], 13);
 
   //  add base map tiles from OpenStreetMap and attribution info to 'map' div
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a>'
   }).addTo(map);
 
+  layer.getContainer().classList.add('w3-sepia');
+  layer.getContainer().classList.add('w3-greyscale');
 
   // GPS ON
   map.addControl(L.control.locate({
@@ -171,12 +173,12 @@ $(document).ready(function() {
   }
 
 
-  // CUSTOM ICON
-  var currentIcon = L.icon({
-      iconUrl: icons[current],
-      iconSize: [38, 95], // size of the icon
-      popupAnchor: [0, -15]
-  });
+  // // CUSTOM ICON
+  // var currentIcon = L.icon({
+  //     iconUrl: icons[current],
+  //     iconSize: [100, 100], // size of the icon
+  //     //popupAnchor: [0, -15]
+  // });
 
 
   //to delete the current cookie when you pass the level
@@ -209,7 +211,7 @@ $(document).ready(function() {
   // CUSTOM ICON
   var currentIcon = L.icon({
     iconUrl: icons[current],
-    iconSize: [38, 95], // size of the icon
+    iconSize: [100, 100], // size of the icon
     popupAnchor: [0, -15]
   });
 
@@ -224,7 +226,7 @@ $(document).ready(function() {
 
     var prevIcon = L.icon({
       iconUrl: newIcon[neo],
-      iconSize: [50, 25], // size of the icon
+      iconSize: [100, 100], // size of the icon
       popupAnchor: [0, -15]
     });
 
@@ -239,29 +241,29 @@ $(document).ready(function() {
 
 
   var music = document.getElementById("mp3");
-  var play_music_button = document.getElementById("fa-globe");
+  // var play_music_button = document.getElementById("fa-volume-up");
 
   function playAudio() {
     if (music.paused) {
       music.play();
-      play_music_button.className = 'load';
+      // play_music_button.className = 'load';
     } else {
       // music.pause();
       music.load()
-      play_music_button.className = 'play';
+      // play_music_button.className = 'play';
     }
-    music.addEventListener('ended',function() {
-      play_music_button.className = 'play';
-    });
+    // music.addEventListener('ended',function() {
+    //   play_music_button.className = 'play';
+    // });
   }
 
-  L.easyButton('<img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Eye_-_The_Noun_Project.svg" style="width:15px">', function(btn, map){
+  L.easyButton('fa-volume-up', function(btn, map){
       playAudio()
   }).addTo(map);
 
 
   // BUTTON SHOW IMAGE
-  L.easyButton('fa-globe', function(btn, map){
+  L.easyButton('<img src="https://cdn.onlinewebfonts.com/svg/img_490843.png" style="width:15px; text-align: center">', function(btn, map){
       $( "#image" ).click();
   }).addTo(map);
 
@@ -278,7 +280,7 @@ $(document).ready(function() {
   let ol = oldPlaces.length
   if (ol == 5){
     Cookies.set("x7","x7")
-    console.log("ci")
+    console.log("LAST LOCATION")
   }
 
 
