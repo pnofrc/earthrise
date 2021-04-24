@@ -26,6 +26,8 @@
         <link href="lightbox.css" rel="stylesheet" />    
 
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 
     </head>
 
@@ -43,13 +45,12 @@
             </div>
 
             <div class="flex">
-                <p id="quest"></p>
+                <audio id="quest" controls></audio>
             </div>
 
             <div class="flex">
                 <button id="firstChoice" onclick="closeMe()"></button>
                 <button id="secondChoice" onclick="closeMe()"></button>
-                <button id="thirdChoice" onclick="closeMe()"></button>
             </div>
 
 
@@ -57,7 +58,7 @@
 
         <a href="" id="image" data-lightbox="roadtrip" style="z-index: -10; position: absolute;"></a>
         
-        <div id="map"></div>
+        <div id="map" class="w3-grayscale w3-sepia"></div>
 
         
         <audio id="mp3" src="chinatown.mp3" type="audio/mp3"></audio>

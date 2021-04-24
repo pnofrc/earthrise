@@ -14,8 +14,14 @@
     src: url(SpratRegular.woff);
   }
 
+@font-face {
+    font-family: Apfel;
+    src: url("ApfelGrotezk-Regular.woff") format("woff2"),
+         url("ApfelGrotezk-Regular.woff2") format("woff");
+  }
+
 *{    
-    font-family: H_exp;
+    font-family: Apfel;
     color: black;
 
 }
@@ -146,9 +152,9 @@ text-shadow: 1px 1px 1px #919191,
     font-size: 6vw;
 } */
 
-#map{
+/* #map{
     filter: drop-shadow(16px 16px 20px red) invert(95%);
-}
+} */
 
 .leaflet-control-attribution a{
     font-size: 10px;
