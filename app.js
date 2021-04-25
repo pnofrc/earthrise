@@ -134,13 +134,13 @@ $(document).ready(function() {
   $("#title").append(title[current]);
 
 
+
   // HERE THE STACK!!
-  let customIconProg = customIcon["x1"][0]  
+  // let customIconProg = customIcon[current][0]
 
-  $('#image').attr('href', customIconProg);
+  // $('#image').attr('href', customIconProg);
 
 
-  
 
   // MAP
 
@@ -189,7 +189,7 @@ $(document).ready(function() {
 
   // Create a TextBox with an attached event
   var textbox = $('<input type="text" placeholder="codeword" />').keyup(function () {
-    if (event.keyCode === 13 && $(textbox).val() === "test"){
+    if (event.keyCode === 13 && $(textbox).val().toUpperCase() === "TEST"){
       choiceToggle()
       deleteItem()
       marker.removeFrom(map)
@@ -264,9 +264,14 @@ $(document).ready(function() {
 
   // BUTTON SHOW IMAGE
   L.easyButton('<img src="https://cdn.onlinewebfonts.com/svg/img_490843.png" style="width:15px; text-align: center">', function(btn, map){
-      $( "#image" ).click();
+    $( "#showPic" ).fadeIn()
   }).addTo(map);
 
+  $( "#showPic" ).click(function() { 
+  if ($( "#showPic" ).fadeIn()){
+  $( "#showPic" ).fadeOut();
+}
+});
 
   // CHOICE POPUP
   var choice = $( "#choice" );
