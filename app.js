@@ -18,12 +18,12 @@ $(document).ready(function() {
   }
 
   var title = {
-      "x1":"Dragonfly \ Het Nieuwe Instituut", //DW
-      "x2":"Dragonfly \ Dakpark", //DW
-      "x3":"Dolphin Waves \ Floating Pavilion", //DF
-      "x4":"Dolphin Waves \ Benthemplein", //DF
-      "x5":"Project Gecko \ Hef Park", //PG
-      "x6":"Project Gecko \ Almondestraat", //PG
+      "x1":"Dragonfly // Het Nieuwe Instituut", //DW
+      "x2":"Dragonfly // Dakpark", //DW
+      "x3":"Dolphin Waves // Floating Pavilion", //DF
+      "x4":"Dolphin Waves // Benthemplein", //DF
+      "x5":"Project Gecko // Hef Park", //PG
+      "x6":"Project Gecko // Almondestraat", //PG
       "x7":"The Roof" //END
   }
 
