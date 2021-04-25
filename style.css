@@ -153,6 +153,10 @@ font-family: title;
     display: none;
 }
 
+#back{
+    display: none;
+}
+
 #showPic img{
     position: fixed;
     width: 60%;

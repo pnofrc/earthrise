@@ -35,7 +35,7 @@
 
         <div class="textandstuff" id="intro" style="position: absolute; z-index: 300;">blablabla inizio
             <div class="flex">
-            <button id="close" onclick="closeIntro()">Close Me</button>
+            <button id="close" onclick="location.reload()">Close Me</button>
         </div></div>
 
         <div class="textandstuff" id="choice" style="position: absolute; z-index: 300;">
@@ -49,8 +49,8 @@
             </div>
 
             <div class="flex">
-                <button id="firstChoice" onclick="closeMe()"></button>
-                <button id="secondChoice" onclick="closeMe()"></button>
+                <button id="firstChoice" onclick="closeMe0()"></button>
+                <button id="secondChoice" onclick="closeMe1()"></button>
             </div>
 
             <div>
@@ -66,22 +66,57 @@
         <div id="map"></div>
 
         <div id="showPic">
-            <img src="worlds/white.png" />
-            <!-- <img src="worlds/Dolphin_Waves/1-02.svg" />
-            <img src="worlds/Dolphin_Waves/2-02.svg" /> -->
+            
         </div>
 
         
         <audio id="mp3" src="chinatown.mp3" type="audio/mp3"></audio>
         <script src="app.js" async defer></script>
-        <script defer>  
-        function closeMe(){
-            $( "#choice" ).fadeOut();
-            location.reload();
-          }
-        function closeIntro(){
-            $( "#intro" ).fadeOut();
-        }
+        <script>  
+
+            function closeMe0(){
+                $( "#choice" ).fadeOut();
+                let currP = currX.replace("x","p")
+                console.log(currP)
+                Cookies.set(currP,0)
+
+                //$("#bigWhite").remove()
+                showCustomGraph();
+                // $("#showPic").append(`<img src="${customIconBack[currP][0]}"/>`)
+                $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`)
+                $( "#showPic" ).fadeIn()
+                $( "#showPic" ).click(function() { 
+                  if ($( "#showPic" ).fadeIn()){
+                  $( "#showPic" ).fadeOut();
+                  location.reload();
+                }
+                });
+            
+            }
+
+
+            function closeMe1(){
+                $( "#choice" ).fadeOut();
+                let currP = currX.replace("x","p")
+                console.log(currP)
+                Cookies.set(currP,1)
+
+                //$("#bigWhite").remove()
+                showCustomGraph();
+                // $("#showPic").append(`<img src="${customIconBack[currP][1]}"/>`)
+                $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`) 
+                $( "#showPic" ).fadeIn()
+                  $( "#showPic" ).click(function() { 
+                  if ($( "#showPic" ).fadeIn()){
+                  $( "#showPic" ).fadeOut();
+                  location.reload();
+                }
+                });
+            }
+
+            function closeIntro(){
+                $( "#intro" ).fadeOut();
+            }
 
 
           </script>

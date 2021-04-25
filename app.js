@@ -1,11 +1,6 @@
 // add text to older 
 // custom text system
 
-
-
-$(document).ready(function() {
-
-
   // DICTIONARIES
   var coord = {
       "x1": [51.914444, 4.470009], //DW
@@ -60,13 +55,34 @@ $(document).ready(function() {
   }
 
   var customIcon= {
-    "x1":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
-    "x2":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
-    "x3":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
-    "x4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
-    "x5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
-    "x6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
-    "x7":["1","2"]
+    "p1":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
+    "p2":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
+    "p3":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
+    "p4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
+    "p5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
+    "p6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
+    "p7":["1","2"]
+  }
+
+  var customIconBack={
+    "p1": "",
+    "p2": "",
+    "p3": "",
+    "p4": "",
+    "p5": "",
+    "p6": ""
+  }
+
+
+
+  var worldIcon= {
+    "x1": "worlds/Dolphin_Waves/DolphinWaves.svg",
+    "x2": "worlds/Dolphin_Waves/DolphinWaves.svg",
+    "x3": 'worlds/Dragon_Fly/DragonFly.svg',
+    "x4": 'worlds/Dragon_Fly/DragonFly.svg',
+    "x5": "worlds/Project_Gecko/ProjectGecko.svg",
+    "x6": "worlds/Project_Gecko/ProjectGecko.svg",
+    "x7": ""
   }
 
   //colored points
@@ -105,10 +121,11 @@ $(document).ready(function() {
 
   console.log(co)
 
-  
+  Cookies.set("x7","x7");
 
   // current x^n
-  console.log("current: "+(co[Object.keys(co)[0]]))
+  let currX = co[Object.keys(co)[0]]
+  console.log("current: "+ currX)
 
 
   //Show completed places
@@ -116,7 +133,7 @@ $(document).ready(function() {
   let oldPlaces = []
 
   function showCompleted(){
-    for( var l = 0; l < places.length; l++){ 
+    for(l = 0; l < places.length; l++){ 
       if (!Object.keys(co).includes(places[l])) { 
         oldPlaces.push(places[l])
       }}
@@ -125,10 +142,26 @@ $(document).ready(function() {
   showCompleted();
 
 
-  //stack svg
-  for (pi=0; pi<oldPlaces.length; pi++){
-    $("#showPic").append(`<img src="${customIcon[oldPlaces[pi]][1]}"/>`)
+
+
+    //Show stack svg
+  var svgChoices = ["p1","p2","p3","p4","p5","p6"];
+  var doneSvgChoices = []
+
+  function showCustomGraph(){
+    for(pi = 0; pi < svgChoices.length; pi++){ 
+      if (Object.keys(co).includes(svgChoices[pi])) { 
+        doneSvgChoices.push(svgChoices[pi])
+      }}
+
+    for (const p of doneSvgChoices){
+      //console.log(p);
+      let value = Cookies.get(p)
+      $("#showPic").append(`<img src="${customIcon[p][value]}"/>`)      
+    }
   }
+
+
 
 
   // SET CURRENT STATE
@@ -140,7 +173,7 @@ $(document).ready(function() {
   $("#firstChoice").append(button[current][0]);
   $("#secondChoice").append(button[current][1]);
 
-  $("#worldIcon").attr("src",customIcon[current][2]);
+  $("#worldIcon").attr("src",worldIcon[current]);
 
 
 
@@ -165,8 +198,8 @@ $(document).ready(function() {
 
   // SHOW PIC AT RELOAD
   if (Object.entries(co).length != 6){
-    $( "#image" ).click();
-  } else if (Object.entries(co).length == 6){
+    $( "#showPic" ).fadeIn()
+  } else if (Object.entries(co).length === 0){
 
     var intro = $( "#intro" );
     if (intro.css('display', 'none') ) {
@@ -266,14 +299,13 @@ $(document).ready(function() {
 
   // BUTTON SHOW IMAGE
   L.easyButton('<img src="https://cdn.onlinewebfonts.com/svg/img_490843.png" style="width:15px; text-align: center">', function(btn, map){
-    $( "#showPic" ).fadeIn()
+    $("#showPic").append('<img id="bigWhite" src="worlds/white.png" />')
+    showCustomGraph();
+    
+    $( "#showPic" ).fadeToggle()
   }).addTo(map);
 
-  $( "#showPic" ).click(function() { 
-  if ($( "#showPic" ).fadeIn()){
-  $( "#showPic" ).fadeOut();
-}
-});
+
 
   // CHOICE POPUP
   var choice = $( "#choice" );
@@ -284,12 +316,13 @@ $(document).ready(function() {
     } }
 
   //LAST LOCATION
-  let ol = oldPlaces.length
-  if (ol == 5){
-    Cookies.set("x7","x7")
-    console.log("LAST LOCATION")
-  }
+  // let ol = oldPlaces.length
+  // if (ol == 5){
+  //   Cookies.set("a7","a7")
+  //   console.log("LAST LOCATION")
+  // }
 
 
-});  
-
+if (oldPlaces.lenght === 7 ){
+    location.reload();
+}
