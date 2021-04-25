@@ -60,12 +60,12 @@ $(document).ready(function() {
   }
 
   var customIcon= {
-    "x1":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg"],
-    "x2":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg"],
-    "x3":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg'],
-    "x4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg'],
-    "x5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg"],
-    "x6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg"],
+    "x1":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
+    "x2":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
+    "x3":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
+    "x4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
+    "x5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
+    "x6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
     "x7":["1","2"]
   }
 
@@ -105,6 +105,8 @@ $(document).ready(function() {
 
   console.log(co)
 
+  
+
   // current x^n
   console.log("current: "+(co[Object.keys(co)[0]]))
 
@@ -123,22 +125,22 @@ $(document).ready(function() {
   showCompleted();
 
 
+  //stack svg
+  for (pi=0; pi<oldPlaces.length; pi++){
+    $("#showPic").append(`<img src="${customIcon[oldPlaces[pi]][1]}"/>`)
+  }
+
 
   // SET CURRENT STATE
   let current = co[Object.keys(co)[0]];
 
-  $("#firstChoice").append(button[current][0]);
-  $("#secondChoice").append(button[current][1]);
-
   $('#quest').attr('src', audio[current]);
   $("#title").append(title[current]);
 
+  $("#firstChoice").append(button[current][0]);
+  $("#secondChoice").append(button[current][1]);
 
-
-  // HERE THE STACK!!
-  // let customIconProg = customIcon[current][0]
-
-  // $('#image').attr('href', customIconProg);
+  $("#worldIcon").attr("src",customIcon[current][2]);
 
 
 
@@ -149,7 +151,7 @@ $(document).ready(function() {
 
   //  add base map tiles from OpenStreetMap and attribution info to 'map' div
   var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a>'
+      attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a> | <a href="">ROODKAPJE</a>'
   }).addTo(map);
 
   layer.getContainer().classList.add('w3-sepia');
