@@ -163,3 +163,10 @@ font-family: title;
     height: 60%;
     margin: 40%;
 }
+
+#end{
+    top: 0;
+    z-index: 400;
+    position: fixed;
+    display: none;
+}

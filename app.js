@@ -1,6 +1,8 @@
 // add text to older 
 // custom text system
 
+
+
   // DICTIONARIES
   var coord = {
       "x1": [51.914444, 4.470009], //DW
@@ -10,6 +12,16 @@
       "x5": [51.912516, 4.501322], //PG
       "x6": [51.928861, 4.480778], //PG
       "x7": [51.916006, 4.476677] //END
+  }
+
+  var codeword = {
+    "x1": 'TEST', //DW
+    "x2": 'TEST', //DW
+    "x3": 'TEST', //DF
+    "x4": 'TEST', //DF
+    "x5": 'TEST', //PG
+    "x6": 'TEST', //PG
+    "x7": 'TEST' //END
   }
 
   var title = {
@@ -61,7 +73,7 @@
     "p4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
     "p5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
     "p6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
-    "p7":["1","2"]
+    
   }
 
   var customIconBack={
@@ -108,6 +120,18 @@
   // COOKIES
 
   let co = Cookies.get();
+
+      // SHOW INTRO
+      if  (Object.entries(co).length === 0){
+
+        var intro = $( "#intro" );
+        if (intro.css('display', 'none') ) {
+          intro.fadeIn();
+        } 
+      } else {
+        checkCookies()
+      }
+
   function checkCookies(){
     if (Object.entries(co).length === 0){
       for (c=0; c<7; c++){
@@ -117,15 +141,19 @@
     }
   }
 
-  checkCookies()
+
+
+
+  
 
   console.log(co)
 
   Cookies.set("x7","x7");
 
   // current x^n
-  let currX = co[Object.keys(co)[0]]
-  console.log("current: "+ currX)
+
+  let current = co[Object.keys(co)[0]];
+  console.log("current: "+ current)
 
 
   //Show completed places
@@ -155,18 +183,13 @@
       }}
 
     for (const p of doneSvgChoices){
-      //console.log(p);
       let value = Cookies.get(p)
-      $("#showPic").append(`<img src="${customIcon[p][value]}"/>`)      
+      $("#showPic").append(`<img src="${customIcon[p][value]}"/>`) 
     }
   }
 
 
-
-
-  // SET CURRENT STATE
-  let current = co[Object.keys(co)[0]];
-
+    // SET CURRENT STATE
   $('#quest').attr('src', audio[current]);
   $("#title").append(title[current]);
 
@@ -196,16 +219,6 @@
               enableHighAccuracy: true,
   }}));
 
-  // SHOW PIC AT RELOAD
-  if (Object.entries(co).length != 6){
-    $( "#showPic" ).fadeIn()
-  } else if (Object.entries(co).length === 0){
-
-    var intro = $( "#intro" );
-    if (intro.css('display', 'none') ) {
-      intro.fadeIn();
-    } 
-  }
 
 
   // // CUSTOM ICON
@@ -215,6 +228,18 @@
   //     //popupAnchor: [0, -15]
   // });
 
+  //END
+function showEnd(){
+  console.log('End')
+  $('#end').fadeIn()
+  for(remove=0;remove<8;remove++){
+    Cookies.remove(svgChoices[remove])
+  }
+}
+
+  if (current == 'x7'){
+    console.log('going to end')
+  }
 
   //to delete the current cookie when you pass the level
   function deleteItem(){
@@ -224,11 +249,17 @@
 
   // Create a TextBox with an attached event
   var textbox = $('<input type="text" placeholder="codeword" />').keyup(function () {
-    if (event.keyCode === 13 && $(textbox).val().toUpperCase() === "TEST"){
+    if(current=="x7"){
+      if (event.keyCode === 13 && $(textbox).val().toUpperCase() === codeword[current]){
+        showEnd()
+        deleteItem()
+      }
+    } else{
+    if (event.keyCode === 13 && $(textbox).val().toUpperCase() === codeword[current]){
       choiceToggle()
       deleteItem()
       marker.removeFrom(map)
-    }
+    }}
   })[0];
 
   // specify popup options 
@@ -321,6 +352,8 @@
   //   Cookies.set("a7","a7")
   //   console.log("LAST LOCATION")
   // }
+
+
 
 
 if (oldPlaces.lenght === 7 ){

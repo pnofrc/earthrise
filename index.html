@@ -35,7 +35,7 @@
 
         <div class="textandstuff" id="intro" style="position: absolute; z-index: 300;">blablabla inizio
             <div class="flex">
-            <button id="close" onclick="location.reload()">Close Me</button>
+            <button onclick="location.reload()">Close Me</button>
         </div></div>
 
         <div class="textandstuff" id="choice" style="position: absolute; z-index: 300;">
@@ -65,8 +65,11 @@
 
         <div id="map"></div>
 
-        <div id="showPic">
-            
+        <div id="showPic"></div>
+
+        <div id="end">
+            <p id="endText">blablabla</p>
+            <button onclick="location.reload()">Close Me</button>
         </div>
 
         
@@ -76,7 +79,7 @@
 
             function closeMe0(){
                 $( "#choice" ).fadeOut();
-                let currP = currX.replace("x","p")
+                let currP = current.replace("x","p")
                 console.log(currP)
                 Cookies.set(currP,0)
 
@@ -97,7 +100,7 @@
 
             function closeMe1(){
                 $( "#choice" ).fadeOut();
-                let currP = currX.replace("x","p")
+                let currP = current.replace("x","p")
                 console.log(currP)
                 Cookies.set(currP,1)
 
@@ -114,9 +117,6 @@
                 });
             }
 
-            function closeIntro(){
-                $( "#intro" ).fadeOut();
-            }
 
 
           </script>
