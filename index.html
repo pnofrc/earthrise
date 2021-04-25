@@ -69,7 +69,8 @@
 
         <div id="end">
             <p id="endText">blablabla</p>
-            <button onclick="location.reload()">Close Me</button>
+            <button onclick="fadeOut()"></button>
+            <button onclick="end()">ENDGAME</button>
         </div>
 
         
@@ -115,6 +116,13 @@
                   location.reload();
                 }
                 });
+            }
+
+            function end(){
+                  for(remove=0;remove<8;remove++){
+                Cookies.remove(svgChoices[remove])
+                }
+                Cookies.remove('x7')
             }
 
 

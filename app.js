@@ -115,40 +115,47 @@
     }
 
   let arr = ["x1","x2","x3","x4","x5","x6"];
-  shuffleArray(arr);
+
 
   // COOKIES
 
   let co = Cookies.get();
 
-      // SHOW INTRO
-      if  (Object.entries(co).length === 0){
-
-        var intro = $( "#intro" );
-        if (intro.css('display', 'none') ) {
-          intro.fadeIn();
-        } 
-      } else {
-        checkCookies()
-      }
+  // SHOW INTRO
+  if  (Object.entries(co).length === 0){
+    var intro = $( "#intro" );
+    if (intro.css('display', 'none') ) {
+      intro.fadeIn();
+    } 
+  } else {
+    checkCookies()
+  }
 
   function checkCookies(){
     if (Object.entries(co).length === 0){
+      let shuffleArr = shuffleArray(arr)
+      arr.push('x7')
       for (c=0; c<7; c++){
         let r = arr[c].toString() 
         Cookies.set(r,r)
         }
-    }
+      
+    } 
+
   }
 
-
-
-
+  checkCookies()
   
+  //END
+function showEnd(){
+  console.log('End')
+  //Cookies.remove("x7");
+  $('#end').fadeIn()
+}
 
   console.log(co)
 
-  Cookies.set("x7","x7");
+
 
   // current x^n
 
@@ -228,14 +235,6 @@
   //     //popupAnchor: [0, -15]
   // });
 
-  //END
-function showEnd(){
-  console.log('End')
-  $('#end').fadeIn()
-  for(remove=0;remove<8;remove++){
-    Cookies.remove(svgChoices[remove])
-  }
-}
 
   if (current == 'x7'){
     console.log('going to end')
@@ -265,7 +264,7 @@ function showEnd(){
   // specify popup options 
   var customOptions =
       {
-          'maxWidth': '500',
+          'maxWidth': '1500',
           'className': 'custom'
       }
 
@@ -353,9 +352,3 @@ function showEnd(){
   //   console.log("LAST LOCATION")
   // }
 
-
-
-
-if (oldPlaces.lenght === 7 ){
-    location.reload();
-}
