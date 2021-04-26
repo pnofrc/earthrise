@@ -16,7 +16,27 @@ var audioWhile = {
   "LatLng(51.928074, 4.476836)":"audio/audioWhile/dragonfly.mp3", //DF
   "LatLng(51.912516, 4.501322)":"audio/audioWhile/progectgecko.mp3", //PG
   "LatLng(51.928861, 4.480778)":"audio/audioWhile/progectgecko.mp3", //PG
-  "LatLng(51.916006, 4.476677)":""
+  "LatLng(51.916006, 4.476677)":"audio/outro.mp3"
+}
+
+var audioWhileX = {
+  "x1":"audio/audioWhile/dolphinwaves.mp3", //DW
+  "x2":"audio/audioWhile/dolphinwaves.mp3", //DW
+  "x3":"audio/audioWhile/dragonfly.mp3", //DF
+  "x4":"audio/audioWhile/dragonfly.mp3", //DF
+  "x5":"audio/audioWhile/progectgecko.mp3", //PG
+  "x6":"audio/audioWhile/progectgecko.mp3", //PG
+  "x7":"audio/outro.mp3"
+}
+
+var getSymb = {
+  "x1":"look around", //DW
+  "x2":"look around", //DW
+  "x3":"look around", //DF
+  "x4":"look around", //DF
+  "x5":"look around", //PG
+  "x6":"look around", //PG
+  "x7":"look around and take the stairs"
 }
 
 var codeword = {
@@ -40,12 +60,12 @@ var title = {
 }
 
 var audioQuest = {
-    "x1":"audio/audioQuest/", //DW
-    "x2":"audio/audioQuest/", //DW
-    "x3":"audio/audioQuest/", //DF
-    "x4":"audio/audioQuest/", //DF
-    "x5":"audio/audioQuest/", //PG
-    "x6":"audio/audioQuest/", //PG
+    "x1":"audio/audioQuest/intro.wav", //DW
+    "x2":"audio/audioQuest/intro.wav", //DW
+    "x3":"audio/audioQuest/intro.wav", //DF
+    "x4":"audio/audioQuest/intro.wav", //DF
+    "x5":"audio/audioQuest/intro.wav", //PG
+    "x6":"audio/audioQuest/intro.wav", //PG
     "x7":"audio/outro.mp3"
 }
 
@@ -292,37 +312,9 @@ for (p = 0; p<oldPlaces.length;p++){
 }
 
 function onLocation() {
-  // alert(this.getLatLng())
   $('#audioWorld').html(`<audio src='${audioWhile[this.getLatLng()]}' controls></audio><br><button onclick="$('#audioWorld').fadeOut()">Close Me</button>`)
   $('#audioWorld').fadeIn();
 }
-
-
-
-
-
-
-
-
-
-// BUTTON AUDIO WHILE GET TO PLACE
-var music = document.getElementById("mp3");
-$('#mp3').attr('src', audioWhile[current]);
-
-function playAudio() {
-  if (music.paused) {
-    music.play();
-  } else {
-    music.load()
-  }
-}
-
-
-
-
-
-
-
 
 
 
@@ -345,8 +337,13 @@ L.easyButton('fa-info-circle', function(btn, map){
 L.easyButton('<img src="icons/buttonPic.png" style="width:16px; ">', function(btn, map){
   $("#showPic").append('<img id="bigWhite" src="worlds/white.png" />')
   showCustomGraph();
-  // $("#showPic").append('<button onclick="$( "#showPic" ).fadeOut();">Close Me</button>')
   $( "#showPic" ).fadeToggle()
+}).addTo(map);
+
+// SHOW INFO
+L.easyButton('fa-area-chart', function(btn, map){
+  $( "#infoPlace" ).fadeIn()
+  $( "#infoPlace" ).html(`<h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
 }).addTo(map);
 
 // CHOICE POPUP
@@ -356,15 +353,6 @@ function choiceToggle() {
   if (choice.css('display', 'none') ) {
     choice.fadeIn();
   } }
-
-
-//LAST LOCATION
-// let ol = oldPlaces.length
-// if (ol == 5){
-//   Cookies.set("a7","a7")
-//   console.log("LAST LOCATION")
-// }
-
 
 
 // STORE CHOICE QUEST AND SHOW ONGOING CUSTOM GRAPH
@@ -419,7 +407,3 @@ function pause(){
   $("#end").fadeOut()
 }
 
-
-// L.easyButton('fa-volume-up', function(btn, map){
-//   playAudio()
-// }).addTo(map);
