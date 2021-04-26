@@ -178,3 +178,11 @@ font-family: title;
 #audioWorld{
     display: none;
 }
+
+#instructions{
+    display: none;
+}
+
+#instructionsButton{
+    display: none;
+}

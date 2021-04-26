@@ -10,13 +10,13 @@ var coord = {
 }
 
 var audioWhile = {
-  "LatLng(51.914444, 4.470009)":"1siesta LIV.mp3", //DW
-  "LatLng(51.906289, 4.442124)":"2siesta LIV.mp3", //DW
-  "LatLng(51.906333, 4.492452)":"3siesta LIV.mp3", //DF
-  "LatLng(51.928074, 4.476836)":"4siesta LIV.mp3", //DF
-  "LatLng(51.912516, 4.501322)":"5siesta LIV.mp3", //PG
-  "LatLng(51.928861, 4.480778)":"6siesta LIV.mp3", //PG
-  "LatLng(51.916006, 4.476677)":"7siesta LIV.mp3"
+  "LatLng(51.914444, 4.470009)":"audio/audioWhile/dolphinwaves.mp3", //DW
+  "LatLng(51.906289, 4.442124)":"audio/audioWhile/dolphinwaves.mp3", //DW
+  "LatLng(51.906333, 4.492452)":"audio/audioWhile/dragonfly.mp3", //DF
+  "LatLng(51.928074, 4.476836)":"audio/audioWhile/dragonfly.mp3", //DF
+  "LatLng(51.912516, 4.501322)":"audio/audioWhile/progectgecko.mp3", //PG
+  "LatLng(51.928861, 4.480778)":"audio/audioWhile/progectgecko.mp3", //PG
+  "LatLng(51.916006, 4.476677)":""
 }
 
 var codeword = {
@@ -40,13 +40,13 @@ var title = {
 }
 
 var audioQuest = {
-    "x1":"siesta LIV.mp3", //DW
-    "x2":"siesta LIV.mp3", //DW
-    "x3":"siesta LIV.mp3", //DF
-    "x4":"siesta LIV.mp3", //DF
-    "x5":"siesta LIV.mp3", //PG
-    "x6":"siesta LIV.mp3", //PG
-    "x7":"siesta LIV.mp3"
+    "x1":"audio/audioQuest/", //DW
+    "x2":"audio/audioQuest/", //DW
+    "x3":"audio/audioQuest/", //DF
+    "x4":"audio/audioQuest/", //DF
+    "x5":"audio/audioQuest/", //PG
+    "x6":"audio/audioQuest/", //PG
+    "x7":"audio/outro.mp3"
 }
 
 var button = {
@@ -145,11 +145,11 @@ function checkCookies(){
     arr.push('x7')
     for (c=0; c<7; c++){
       let r = arr[c].toString() 
-      Cookies.set(r,r)}
+      Cookies.set(r,r,  { expires: 60 })}
   }
 }
 
-checkCookies()
+
 
 
 //END
@@ -336,12 +336,17 @@ L.easyButton('fa-question-circle-o', function(btn, map){
   $( "#colophon" ).fadeIn()
 }).addTo(map);
 
-// BUTTON SHOW CUSTOM GRAPH
+// SHOW INSTRUCTIONS
+L.easyButton('fa-info-circle', function(btn, map){
+  $( "#instructionsButton" ).fadeIn()
+}).addTo(map);
+
+// SHOW CUSTOM GRAPH
 L.easyButton('<img src="icons/buttonPic.png" style="width:16px; ">', function(btn, map){
   $("#showPic").append('<img id="bigWhite" src="worlds/white.png" />')
   showCustomGraph();
-  
-  $( "#showPic" ).fadeToggle()
+  $("#showPic").append('<button onclick="$("#showPic").fadeOut();">Close Me</button>')
+  $( "#showPic" ).fadeIn()
 }).addTo(map);
 
 // CHOICE POPUP
@@ -369,7 +374,7 @@ function closeMe0(){
   deleteItem()
   let currP = current.replace("x","p")
   console.log(currP)
-  Cookies.set(currP,0)
+  Cookies.set(currP,0, { expires: 60 })
 
   $("#showPic").append(`<img src="${customIconBack[current]}"/>`)
   showCustomGraph();
@@ -387,7 +392,7 @@ function closeMe1(){
   deleteItem()
   let currP = current.replace("x","p")
   console.log(currP)
-  Cookies.set(currP,1)
+  Cookies.set(currP,1, { expires: 60 })
 
   $("#showPic").append(`<img src="${customIconBack[current]}"/>`)
   showCustomGraph();
