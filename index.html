@@ -74,65 +74,7 @@
         </div>
 
         
-        <audio id="mp3" src="chinatown.mp3" type="audio/mp3"></audio>
+        <audio id="mp3" src="" type="audio/mp3"></audio>
         <script src="app.js" async defer></script>
-        <script>  
-
-            function closeMe0(){
-                $( "#choice" ).fadeOut();
-                let currP = current.replace("x","p")
-                console.log(currP)
-                Cookies.set(currP,0)
-
-                //$("#bigWhite").remove()
-                showCustomGraph();
-                // $("#showPic").append(`<img src="${customIconBack[currP][0]}"/>`)
-                $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`)
-                $( "#showPic" ).fadeIn()
-                $( "#showPic" ).click(function() { 
-                  if ($( "#showPic" ).fadeIn()){
-                  $( "#showPic" ).fadeOut();
-                  location.reload();
-                }
-                });
-            
-            }
-
-
-            function closeMe1(){
-                $( "#choice" ).fadeOut();
-                let currP = current.replace("x","p")
-                console.log(currP)
-                Cookies.set(currP,1)
-
-                //$("#bigWhite").remove()
-                showCustomGraph();
-                // $("#showPic").append(`<img src="${customIconBack[currP][1]}"/>`)
-                $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`) 
-                $( "#showPic" ).fadeIn()
-                  $( "#showPic" ).click(function() { 
-                  if ($( "#showPic" ).fadeIn()){
-                  $( "#showPic" ).fadeOut();
-                  location.reload();
-                }
-                });
-            }
-
-            function endd(){
-                for(remove=0;remove<8;remove++){
-                Cookies.remove(svgChoices[remove])
-                }
-                Cookies.remove('x7')
-                console.log('cacac')
-                location.reload()
-            }
-
-            function pause(){
-                $("#end").fadeOut()
-            }
-
-
-
-          </script>
     </body>
 </html>
