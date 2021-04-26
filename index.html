@@ -5,30 +5,35 @@
         <link rel="shortcut icon" type="image/icon" href="test.jpg"/>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>EARTHRIZE</title>
-        <meta name="description" content="">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+        <title>✧ EARTHRISE ✧</title>
+
+        <meta name="description" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="style.css">
+
+        <!-- JQUERY -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- LEAFLET -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
         <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
         
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
-
         <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
 
-
+        <!-- COOKIES API -->
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-        
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+
+        <!-- W3 CSS -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     </head>
 
     <body>
@@ -36,7 +41,28 @@
         <div class="textandstuff" id="intro" style="position: absolute; z-index: 300;">blablabla inizio
             <div class="flex">
             <button onclick="location.reload()">Close Me</button>
-        </div></div>
+            </div>
+        </div>
+
+        <div class="textandstuff" id="lexicon" style="position: absolute; z-index: 300;">
+            <div class="flex">
+                <p>lexicon ahahahahhaha no fanculo dio canino</p>
+                <button onclick="$('#lexicon').fadeOut()">Close Me</button>
+            </div>
+        </div>
+
+        <div class="textandstuff" id="colophon" style="position: absolute; z-index: 300;">
+            <div class="flex">
+                <p>weee a game from lou isa</p>
+                <p>weee a game from lou</p>
+                <p>weee a game from isa</p>
+                <button onclick="$('#colophon').fadeOut()">Close Me</button>
+            </div>
+        </div>
+
+        <div class="textandstuff" id="audioWorld" style="position: absolute; z-index: 300;">
+
+        </div>
 
         <div class="textandstuff" id="choice" style="position: absolute; z-index: 300;">
 
@@ -57,24 +83,21 @@
                 <img id="worldIcon" src="" />
             </div>
 
-
         </div>
-
-
 
 
         <div id="map"></div>
 
         <div id="showPic"></div>
 
-        <div id="end">
+        <div class="textandstuff" id="end">
             <p id="endText">blablabla</p>
             <button onclick="pause()">Closeme</button>
             <button onclick="endd()">ENDGAME</button>
         </div>
 
-        
         <audio id="mp3" src="" type="audio/mp3"></audio>
+
         <script src="app.js" async defer></script>
     </body>
 </html>

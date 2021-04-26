@@ -10,13 +10,13 @@ var coord = {
 }
 
 var audioWhile = {
-  "x1":"siesta LIV.mp3", //DW
-  "x2":"siesta LIV.mp3", //DW
-  "x3":"siesta LIV.mp3", //DF
-  "x4":"siesta LIV.mp3", //DF
-  "x5":"siesta LIV.mp3", //PG
-  "x6":"siesta LIV.mp3", //PG
-  "x7":"siesta LIV.mp3"
+  "LatLng(51.914444, 4.470009)":"1siesta LIV.mp3", //DW
+  "LatLng(51.906289, 4.442124)":"2siesta LIV.mp3", //DW
+  "LatLng(51.906333, 4.492452)":"3siesta LIV.mp3", //DF
+  "LatLng(51.928074, 4.476836)":"4siesta LIV.mp3", //DF
+  "LatLng(51.912516, 4.501322)":"5siesta LIV.mp3", //PG
+  "LatLng(51.928861, 4.480778)":"6siesta LIV.mp3", //PG
+  "LatLng(51.916006, 4.476677)":"7siesta LIV.mp3"
 }
 
 var codeword = {
@@ -141,7 +141,7 @@ if  (Object.entries(co).length === 0){
 
 function checkCookies(){
   if (Object.entries(co).length === 0){
-    let shuffleArr = shuffleArray(arr)
+    // let shuffleArr = shuffleArray(arr)
     arr.push('x7')
     for (c=0; c<7; c++){
       let r = arr[c].toString() 
@@ -217,7 +217,7 @@ var map = L.map('map', { scrollWheelZoom: false }).setView([51.90887172801163, 4
 
 //  add base map tiles from OpenStreetMap and attribution info to 'map' div
 var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a> | <a href="">ROODKAPJE</a>'
+    attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a>'
 }).addTo(map);
 
 layer.getContainer().classList.add('w3-sepia');
@@ -246,7 +246,6 @@ var textbox = $('<input type="text" placeholder="codeword" />').keyup(function (
   } else{
   if (event.keyCode === 13 && $(textbox).val().toUpperCase() === codeword[current]){
     choiceToggle()
-    deleteItem()
     marker.removeFrom(map)
   }}
 })[0];
@@ -269,7 +268,7 @@ var currentIcon = L.icon({
   popupAnchor: [0, -15]
 });
 
-// CURRENT POSTITION
+// CURRENT MARKER
 var marker = L.marker([currentLong,currentLat], { icon: currentIcon }).bindPopup(textbox, customOptions).addTo(map);
 
 
@@ -287,10 +286,23 @@ for (p = 0; p<oldPlaces.length;p++){
   let lat = coord[neo][1];
 
   let markerLocation = new L.LatLng(lon,lat);
-  let marker = new L.Marker(markerLocation, {icon: prevIcon});
-  marker.bindPopup(title[neo]);
+  let marker = new L.Marker(markerLocation, {icon: prevIcon}).on('click', onLocation);
+
   map.addLayer(marker)
 }
+
+function onLocation() {
+  // alert(this.getLatLng())
+  $('#audioWorld').html(`<audio src='${audioWhile[this.getLatLng()]}' controls></audio><br><button onclick="$('#audioWorld').fadeOut()">Close Me</button>`)
+  $('#audioWorld').fadeIn();
+}
+
+
+
+
+
+
+
 
 
 // BUTTON AUDIO WHILE GET TO PLACE
@@ -305,10 +317,24 @@ function playAudio() {
   }
 }
 
-L.easyButton('fa-volume-up', function(btn, map){
-    playAudio()
+
+
+
+
+
+
+
+
+
+// SHOW LEXICON
+L.easyButton('fa-key', function(btn, map){
+  $( "#lexicon" ).fadeIn()
 }).addTo(map);
 
+// SHOW COLOPHON
+L.easyButton('fa-question-circle-o', function(btn, map){
+  $( "#colophon" ).fadeIn()
+}).addTo(map);
 
 // BUTTON SHOW CUSTOM GRAPH
 L.easyButton('<img src="icons/buttonPic.png" style="width:16px; ">', function(btn, map){
@@ -326,6 +352,7 @@ function choiceToggle() {
     choice.fadeIn();
   } }
 
+
 //LAST LOCATION
 // let ol = oldPlaces.length
 // if (ol == 5){
@@ -339,6 +366,7 @@ function choiceToggle() {
 
 function closeMe0(){
   $( "#choice" ).fadeOut();
+  deleteItem()
   let currP = current.replace("x","p")
   console.log(currP)
   Cookies.set(currP,0)
@@ -356,6 +384,7 @@ function closeMe0(){
 
 function closeMe1(){
   $( "#choice" ).fadeOut();
+  deleteItem()
   let currP = current.replace("x","p")
   console.log(currP)
   Cookies.set(currP,1)
@@ -384,3 +413,8 @@ function endd(){
 function pause(){
   $("#end").fadeOut()
 }
+
+
+// L.easyButton('fa-volume-up', function(btn, map){
+//   playAudio()
+// }).addTo(map);

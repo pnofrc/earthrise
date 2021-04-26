@@ -170,3 +170,11 @@ font-family: title;
     position: fixed;
     display: none;
 }
+
+#lexicon{
+    display: none;
+}
+
+#audioWorld{
+    display: none;
+}
