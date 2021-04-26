@@ -345,8 +345,8 @@ L.easyButton('fa-info-circle', function(btn, map){
 L.easyButton('<img src="icons/buttonPic.png" style="width:16px; ">', function(btn, map){
   $("#showPic").append('<img id="bigWhite" src="worlds/white.png" />')
   showCustomGraph();
-  $("#showPic").append('<button onclick="$("#showPic").fadeOut();">Close Me</button>')
-  $( "#showPic" ).fadeIn()
+  // $("#showPic").append('<button onclick="$( "#showPic" ).fadeOut();">Close Me</button>')
+  $( "#showPic" ).fadeToggle()
 }).addTo(map);
 
 // CHOICE POPUP
