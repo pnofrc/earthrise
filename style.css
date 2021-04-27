@@ -55,7 +55,7 @@ html, body, #map {
     background-size: 800% 800%;
     padding: 3vw;
     border: 10px double var(--main);
-    font-size: small;
+    font-size: 2px;
 
     -webkit-animation: backGradient 5s ease infinite;
     -moz-animation: backGradient 5s ease infinite;
