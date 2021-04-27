@@ -53,20 +53,44 @@
 
     <body>
 
-        <div class="textandstuff" id="intro" style="position: absolute; z-index: 300;">blablabla inizio
+        <div class="textandstuff" id="intro" style="position: absolute; z-index: 300;">CLICK THE SHAPE TO START
             <div class="flex">
                 <img onclick="intros()" src='worlds/Project_Gecko/ProjectGecko.svg' />
             </div>
         </div>
         <div class="textandstuff" id="instructions">
-            <p>stuff instru lists</p>
+            <ul>
+                <li>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
+                Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</li>
+               <li>! Smartphone and headphones needed !</li>
+                <li>Find symbol in given location on map</li>
+                <li>translate symbol with dictionary inside app</li>
+                <li>enter translation into app</li>
+                <li>make contact with guide that will lead you around their community (unlock auto track)</li>
+                <li>make choice at end of every audiopiece</li>
+               <li>game will give you your next location</li>
+                <li>complete six locations for the game to reveal your final spot</li>
+                </li>
+            </ul>
             <button onclick="checkCookies(); location.reload()">Close Me</button>
         </div>
 
 
         <div class="textandstuff" id="instructionsButton" style="position: absolute; z-index: 300;">
             <div class="flex">
-                <p>stuff instru lists</p>
+                <ul>
+                    <li>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
+                    Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</li>
+                   <li>! Smartphone and headphones needed !</li>
+                    <li>Find symbol in given location on map</li>
+                    <li>translate symbol with dictionary inside app</li>
+                    <li>enter translation into app</li>
+                    <li>make contact with guide that will lead you around their community (unlock auto track)</li>
+                    <li>make choice at end of every audiopiece</li>
+                   <li>game will give you your next location</li>
+                    <li>complete six locations for the game to reveal your final spot</li>
+                    </li>
+                </ul>
                 <button onclick="$('#instructionsButton').fadeOut()">Close Me</button>
             </div>
         </div>
@@ -75,16 +99,14 @@
 
         <div class="textandstuff" id="lexicon" style="position: absolute; z-index: 300;">
             <div class="flex">
-                <p>lexicon ahahahahhaha no fanculo dio canino</p>
+                <p>THIS WILL BE THE LEXICON</p>
                 <button onclick="$('#lexicon').fadeOut()">Close Me</button>
             </div>
         </div>
 
         <div class="textandstuff" id="colophon" style="position: absolute; z-index: 300;">
             <div class="flex">
-                <p>weee a game from lou isa</p>
-                <p>weee a game from lou</p>
-                <p>weee a game from isa</p>
+                THIS WILL BE A COLOPHON
                 <button onclick="$('#colophon').fadeOut()">Close Me</button>
             </div>
         </div>
@@ -99,6 +121,10 @@
             </div>
 
             <div class="flex">
+                <p id="textquest"></p>
+            </div>
+
+            <div class="flex">
                 <audio id="quest" src="" controls></audio>
             </div>
 
@@ -106,6 +132,7 @@
                 <button id="firstChoice" onclick="closeMe0()"></button>
                 <button id="secondChoice" onclick="closeMe1()"></button>
             </div>
+        
 
             <div>
                 <img id="worldIcon" src="" />
