@@ -191,9 +191,20 @@ function showEnd(){
 }
 
 
-
 // CURRENT PLACE x^n
-let current = co[Object.keys(co)[0]];
+
+var daje = Object.keys(co)
+// console.log(daje)
+let currents = []
+
+ for (element=0;element<7;element++){
+  if (daje[element].startsWith('x')){
+    currents.push(daje[element])
+  }
+ }
+let current = currents[0]
+
+
 console.log("current: "+ current)
 
 if (current == 'x7'){
@@ -265,7 +276,7 @@ map.addControl(L.control.locate({
 
 //to delete the current cookie when you pass the level
 function deleteItem(){
-  Cookies.remove(co[Object.keys(co)[0]]);  
+  Cookies.remove(current);  
 }
 
 
