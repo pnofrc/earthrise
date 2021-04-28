@@ -177,7 +177,7 @@ function checkCookies(){
     array.push('x7')
     for (c=0; c<7; c++){
       let r = array[c] 
-      Cookies.set(r,r,  { expires: 60 })}
+      Cookies.set(r,r,  { expires: 60 });}
   }
 }
 
@@ -373,9 +373,9 @@ function choiceToggle() {
 function closeMe0(){
   $( "#choice" ).fadeOut();
   deleteItem()
-  let currP = current.replace("x","p")
-  console.log(currP)
-  Cookies.set(currP,0, { expires: 60 })
+  let currP = current.replace("x","p");
+  console.log(currP);
+  Cookies.set(currP,0, { expires: 60 });
 
   $("#showPic").append(`<img src="${customIconBack[current]}"/>`)
   showCustomGraph();
@@ -391,9 +391,9 @@ function closeMe0(){
 function closeMe1(){
   $( "#choice" ).fadeOut();
   deleteItem()
-  let currP = current.replace("x","p")
-  console.log(currP)
-  Cookies.set(currP,1, { expires: 60 })
+  let currP = current.replace("x","p");
+  console.log(currP);
+  Cookies.set(currP,1, { expires: 60 });
 
   $("#showPic").append(`<img src="${customIconBack[current]}"/>`)
   showCustomGraph();
