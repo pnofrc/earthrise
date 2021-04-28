@@ -59,6 +59,18 @@ var title = {
     "x7":"The Roof" //END
 }
 
+
+
+var titleWhile = {
+  "LatLng(51.914444, 4.470009)":"Dragonfly // Het Nieuwe Instituut", //DF
+  "LatLng(51.906289, 4.442124)":"Dragonfly // Dakpark", //DF
+  "LatLng(51.906333, 4.492452)":"Dolphin Waves // Floating Pavilion", //DW
+  "LatLng(51.928074, 4.476836)":"Dolphin Waves // Benthemplein", //DW
+  "LatLng(51.912516, 4.501322)":"Project Gecko // Hef Park", //PG
+  "LatLng(51.928861, 4.480778)":"Project Gecko // Almondestraat", //PG
+  "LatLng(51.916006, 4.476677)":"The Roof" //END
+}
+
 var textQuest = {
     "x1":"When the world suffers a collective trauma, and every step on every street reminds you of the harm and pain, what do you do? Do we depend on individuals and our local communities to slowly heal and grow again, or might we depend on artificial influences to stimulate our wellbeing? Should we put hurting memories on scaffolding, building over them to try to erase the pain, or do we leave stretch marks of change?  ", //DF
     "x2":"Just like the bees and the flowers, we’ve helped humans connect with each other beyond the flowerbeds they would have otherwise stayed in. Letting flowers root beyond the concrete boxes designed for them, finding ways for global ecosystems and collectives to harmonize. Would the bee be a welcome presence in your flowerbed? Or might we have rooted enough?", //DF
@@ -240,7 +252,7 @@ function showCustomGraph(){
     $("#showPic").append(`<img src="${customIcon[p][value]}"/>`) 
   }
 }
-
+showCustomGraph()
 
 // SET CURRENT STATE IN HTML
 $('#quest').attr('src', audioQuest[current]);
@@ -336,7 +348,7 @@ for (p = 0; p<oldPlaces.length;p++){
 }
 
 function onLocation() {
-  $('#audioWorld').html(`<audio src='${audioWhile[this.getLatLng()]}' controls></audio><br><button onclick="$('#audioWorld').fadeOut()">Close Me</button>`)
+  $('#audioWorldCont').html(`<h1>${titleWhile[this.getLatLng()]}</h1><br><audio src='${audioWhile[this.getLatLng()]}' controls></audio><br><button onclick="$('#audioWorld').fadeOut()">Close Me</button>`)
   $('#audioWorld').fadeIn();
 }
 
@@ -359,9 +371,8 @@ L.easyButton('fa-info-circle', function(btn, map){
 
 // SHOW CUSTOM GRAPH
 L.easyButton('<img src="icons/buttonPic.png" style="width:16px; ">', function(btn, map){
-  $("#showPic").append('<img id="bigWhite" src="worlds/white.png" />')
   showCustomGraph();
-  $( "#showPic" ).fadeToggle()
+  $( "#showPic" ).fadeIn()
 }).addTo(map);
 
 // SHOW INFO
@@ -381,22 +392,20 @@ function choiceToggle() {
 
 // STORE CHOICE QUEST AND SHOW ONGOING CUSTOM GRAPH
 
+let bck = customIconBack[current]
+
 function closeMe0(){
   $( "#choice" ).fadeOut();
   deleteItem()
   let currP = current.replace("x","p");
   console.log(currP);
   Cookies.set(currP,0, { expires: 60 });
+  $( "#extra" ).fadeIn();
+  $( "#next" ).fadeIn();
 
-  $("#showPic").append(`<img src="${customIconBack[current]}"/>`)
-  showCustomGraph();
-  $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`)
-  $( "#showPic" ).fadeIn()
-  $( "#showPic" ).click(function() { 
-    if ($( "#showPic" ).fadeIn()){
-    $( "#showPic" ).fadeOut();
-    location.reload();
-  }});
+
+  $("#bigWhite").attr('src', bck);
+  $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`);
 }
 
 function closeMe1(){
@@ -404,17 +413,12 @@ function closeMe1(){
   deleteItem()
   let currP = current.replace("x","p");
   console.log(currP);
-  Cookies.set(currP,1, { expires: 60 });
-
-  $("#showPic").append(`<img src="${customIconBack[current]}"/>`)
-  showCustomGraph();
-  $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`) 
-  $( "#showPic" ).fadeIn()
-    $( "#showPic" ).click(function() { 
-    if ($( "#showPic" ).fadeIn()){
-    $( "#showPic" ).fadeOut();
-    location.reload();
-  }});
+  Cookies.set(currP,0, { expires: 60 });
+  $( "#extra" ).fadeIn();
+  $( "#next" ).fadeIn();
+  
+  $("#bigWhite").attr('src',bck);
+  $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`);
 }
 
 // DELETE COOKIES AND END GAME
@@ -430,4 +434,3 @@ function endd(){
 function pause(){
   $("#end").fadeOut()
 }
-

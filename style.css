@@ -34,34 +34,162 @@ html, body, #map {
 }
 
 #map{
-    position: relative; 
-     z-index: 0;
+    position: fixed; 
+    z-index: 0;
 } 
 
-.text{
-    position: relative;
-    z-index: 5;
-}
 
-.textandstuff{
-    display: none;
-    /* display: flex;
+.flex{
+    min-height: 100%;
     justify-content: center;
-    align-items: center; */
-    
-    width: 99%;
-   height: 94vh;
-    background: linear-gradient(129deg, #5624668c, #3f6dc2b5, #3fc2aecd, #222433c9);
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    position: relative;
+    border: solid red 1px;
+
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(129deg, #56246662,#6c729d93);
     background-size: 800% 800%;
     padding: 3vw;
     border: 10px double var(--main);
-    font-size: 10px;
 
     -webkit-animation: backGradient 5s ease infinite;
     -moz-animation: backGradient 5s ease infinite;
     -o-animation: backGradient 5s ease infinite;
     animation: backGradient 5s ease infinite;
 }
+
+
+.flex p{
+    position: relative;
+    /* overflow-y: ; */
+    font-size: 8vw;
+    /* line-height: 4vw; */
+    text-shadow: 2px 2px 4px #f5f1f1;
+}
+
+
+
+#next{
+    display: none;
+}
+.flex2{
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    position: relative;
+}
+
+#colophon{
+    display: none
+}
+
+#title{
+/* font-size: 40px; */
+color: var(--sec);
+font-family: title;
+}
+
+#choice{
+    display: none;
+}
+
+#choice button{
+    background-color:rgba(205, 61, 61, 0.219);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(130, 130, 130, 0.7);
+    padding: .5vw 1vw;
+    width: 70%;
+    margin: 3vw 0 ;
+    font-size: 4vw;
+    padding: 2%;
+    text-shadow: .5px .5px 1px #f5f1f193;
+
+}
+
+
+.leaflet-control-attribution a{
+    font-size: 10px;
+    pointer-events: none;
+    color: var(--sec);
+}
+
+#showPic{
+    bottom: 0;
+    width: 60%; 
+     height: 30%;
+    /* border: solid 2px red; */
+    position: fixed;
+    /* display: inline; */
+
+}
+#showPic img{
+    bottom: 0;
+    z-index: 0;
+    z-index: 2; 
+    position: fixed;
+}
+
+
+#back{
+    display: none;
+}
+
+#end{
+    top: 0;
+    z-index: 400;
+    position: fixed;
+    display: none;
+}
+
+#lexicon{
+    display: none;
+}
+
+#audioWorld{
+    display: none;
+}
+
+#instructions{
+    display: none;
+    z-index: 2000;
+}
+
+#instructionsButton{
+    display: none;
+}
+
+#infoPlace{
+    display: none;
+}
+
+#intro{
+    display: none;
+}
+
+#intro img{
+    width: 60%;
+}
+
+#extra{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 0;
+    background-color: #2c272e62;
+    position: relative;
+}
+
+
+
 
 @-webkit-keyframes backGradient {
     0%{background-position:0% 48%}
@@ -82,111 +210,4 @@ html, body, #map {
     0%{background-position:0% 48%}
     50%{background-position:100% 53%}
     100%{background-position:0% 48%}
-}
-
-
-.flex{
-    font-size: 5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-}
-
-/* .flex:nth-child(2){
-     margin-top: 12vw; 
-} */
-
-.flex:nth-child(3){
-    flex-direction: column;
-}
-
-p{
-    margin-left: 5vw;
-    text-shadow: 2px 2px 4px #f5f1f1;
-    line-height: 7vw;
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif */
-    /* font-stretch: ultra-expanded; */
-}
-
-#title{
-/* font-size: 40px; */
-color: var(--sec);
-font-family: title;
-
-}
-
-#choice button{
-    background-color:rgba(205, 61, 61, 0.219);
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(130, 130, 130, 0.7);
-    padding: .5vw 1vw;
-    width: 70%;
-    margin: 3vw 0 ;
-    font-size: 4vw;
-    padding: 2%;
-    text-shadow: .5px .5px 1px #f5f1f193;
-
-}
-
-/* #close{
-    width: 50%;
-    background-color:rgba(171, 107, 107, 0.4);
-    color: var(--sec);
-    font-size: 6vw;
-} */
-
-/* #map{
-    filter: drop-shadow(16px 16px 20px red) invert(95%);
-} */
-
-.leaflet-control-attribution a{
-    font-size: 10px;
-    pointer-events: none;
-    color: var(--sec);
-}
-
-#showPic{
-    top: 0;
-    z-index: 400;
-    position: fixed;
-    display: none;
-}
-
-#back{
-    display: none;
-}
-
-#showPic img{
-    position: fixed;
-    width: 60%;
-    height: 60%;
-    margin: 40%;
-}
-
-#end{
-    top: 0;
-    z-index: 400;
-    position: fixed;
-    display: none;
-}
-
-#lexicon{
-    display: none;
-}
-
-#audioWorld{
-    display: none;
-}
-
-#instructions{
-    display: none;
-}
-
-#instructionsButton{
-    display: none;
-}
-
-#infoPlace{
-    display: none;
 }

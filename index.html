@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <link rel="shortcut icon" type="image/icon" href="test.jpg"/>
+        <link rel="shortcut icon" type="image/icon" href="intro.png"/>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -53,126 +53,155 @@
 
     <body>
 
-        <div class="textandstuff" id="intro" style="position: absolute; z-index: 300;">CLICK THE SHAPE TO START
+        <!-- STATIC -->
+        <div id="intro" style="position: absolute; z-index: 300;">
             <div class="flex">
-                <img onclick="intros()" src='worlds/Project_Gecko/ProjectGecko.svg' />
+                <h1>CLICK THE SHAPE TO START</h1>
+                <img onclick="intros()" src='intro.png' />
+                <button onclick="reloadIntro();">RELOAD</button>
+                <button onclick="skipIntro();">SKIP</button>
             </div>
         </div>
-        <div class="textandstuff" id="instructions">
-            <ul>
-                <li>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
-                Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</li>
-               <li>! Smartphone and headphones needed !</li>
-                <li>Find symbol in given location on map</li>
-                <li>translate symbol with dictionary inside app</li>
-                <li>enter translation into app</li>
-                <li>make contact with guide that will lead you around their community (unlock auto track)</li>
-                <li>make choice at end of every audiopiece</li>
-               <li>game will give you your next location</li>
-                <li>complete six locations for the game to reveal your final spot</li>
-                </li>
-            </ul>
+        <div id="instructions">
+            <div class="flex">
+                <div class="scroll">
+                    <p>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
+                    Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</p>
+                    <p>! Smartphone and headphones needed !</p>
+                    <p>Find symbol in given location on map</p>
+                    <p>translate symbol with dictionary inside app</p>
+                    <p>enter translation into app</p>
+                    <p>make contact with guide that will lead you around their community (unlock auto track)</p>
+                    <p>make choice at end of every audiopiece</p>
+                    <p>game will give you your next location</p>
+                    <p>complete six locations for the game to reveal your final spot</p>
+                </div>
             <button onclick="checkCookies(); location.reload()">Close Me</button>
+            </div>
         </div>
 
-
-        <div class="textandstuff" id="instructionsButton" style="position: absolute; z-index: 300;">
+        <!-- STATIC -->
+        <div id="instructionsButton" style="position: absolute; z-index: 300;">
             <div class="flex">
-                <ul>
-                    <li>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
-                    Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</li>
-                   <li>! Smartphone and headphones needed !</li>
-                    <li>Find symbol in given location on map</li>
-                    <li>translate symbol with dictionary inside app</li>
-                    <li>enter translation into app</li>
-                    <li>make contact with guide that will lead you around their community (unlock auto track)</li>
-                    <li>make choice at end of every audiopiece</li>
-                   <li>game will give you your next location</li>
-                    <li>complete six locations for the game to reveal your final spot</li>
-                    </li>
-                </ul>
+                
+                    <p>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
+                    Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</p>
+                   <p>! Smartphone and headphones needed !</p>
+                    <p>Find symbol in given location on map</p>
+                    <p>translate symbol with dictionary inside app</p>
+                    <p>enter translation into app</p>
+                    <p>make contact with guide that will lead you around their community (unlock auto track)</p>
+                    <p>make choice at end of every audiopiece</p>
+                   <p>game will give you your next location</p>
+                    <p>complete six locations for the game to reveal your final spot</p>
+                    </p>
+                
                 <button onclick="$('#instructionsButton').fadeOut()">Close Me</button>
             </div>
         </div>
 
 
-
-        <div class="textandstuff" id="lexicon" style="position: absolute; z-index: 300;">
+        <!-- STATIC -->
+        <div id="lexicon" style="position: absolute; z-index: 300;">
             <div class="flex">
                 <p>THIS WILL BE THE LEXICON</p>
                 <button onclick="$('#lexicon').fadeOut()">Close Me</button>
             </div>
         </div>
 
-        <div class="textandstuff" id="colophon" style="position: absolute; z-index: 300;">
+        <!-- STATIC -->
+        <div id="colophon" style="position: absolute; z-index: 300;">
             <div class="flex">
                 THIS WILL BE A COLOPHON
                 <button onclick="$('#colophon').fadeOut()">Close Me</button>
             </div>
         </div>
 
-        <div class="textandstuff" id="audioWorld" style="position: absolute; z-index: 300;">
+        <div id="audioWorld" style="position: absolute; z-index: 300;">
+            <div class="flex">
+                <div id="audioWorldCont"></div>
+            </div>
         </div>
 
-        <div class="textandstuff" id="choice" style="position: absolute; z-index: 300;">
-
+        <div id="choice" style="position: absolute; z-index: 300;">
             <div class="flex">
                 <h1 id="title"></h1>
-            </div>
 
-            <div class="flex">
                 <p id="textquest"></p>
-            </div>
 
-            <div class="flex">
                 <audio id="quest" src="" controls></audio>
-            </div>
 
-            <div class="flex">
                 <button id="firstChoice" onclick="closeMe0()"></button>
                 <button id="secondChoice" onclick="closeMe1()"></button>
-            </div>
         
-
-            <div>
                 <img id="worldIcon" src="" />
             </div>
-
         </div>
 
-        <div class="textandstuff" id="infoPlace" style="position: absolute; z-index: 300;">
-            <button onclick="$('#infoPlace').fadeOut()">Close Me</button>
+        <div id="infoPlace" style="position: absolute; z-index: 300;">
+            <div class="flex">
+                <div class="contents" id="infoPlaceCont">
+                    <button onclick="$('#infoPlace').fadeOut()">Close Me</button>
+                </div>
+            </div>
         </div>
 
-        <div id="map"></div>
 
-        <div id="showPic">
-
-            
+        <div id="end">
+            <div class="flex">
+                <div>
+                    <p id="endText">blablabla</p>
+                    <button onclick="pause()">Closeme</button>
+                    <button onclick="endd()">ENDGAME</button>
+                </div>
+            </div>
         </div>
 
-        <div class="textandstuff" id="end">
-            <p id="endText">blablabla</p>
-            <button onclick="pause()">Closeme</button>
-            <button onclick="endd()">ENDGAME</button>
-        </div>
+
+
 
         <audio id="mp3" src="" type="audio/mp3"></audio>
 
+        <div id="map"></div>
+
+
+
+        <div id="showPic">
+            <div id="extra" style="position: absolute; z-index: 1;">                    <button id='next' style="position: absolute; z-index: 300;" onclick="location.reload()">Next Location</button>
+            </div>
+                <!-- <div class="flex2"> -->
+ 
+            <!-- </div> -->
+            <img id="bigWhite" style="width: 100%;" src="worlds/white.png" />
+        </div>
+
+
+
+
         <script src="app.js" async defer></script>
         <script>
+
             var intromp3 = new Audio('audio/intro.mp3');
             function intros(){
                 intromp3.play()
             }
+
+            function skipIntro(){
+                $('#intro').fadeOut()
+                intromp3.pause()
+                intromp3.currentTime=0;
+                $('#instructions').fadeIn()
+            }
+
+            function reloadIntro(){
+                intromp3.currentTime=0;
+                intromp3.play();
+            }
+
             intromp3.addEventListener('ended', function(){
                 $('#intro').fadeOut()
                 $('#instructions').fadeIn()
             });
-
-            // function playIntro() {
-            //    audiomp3.play()
-            // }
         </script>
     </body>
 </html>
