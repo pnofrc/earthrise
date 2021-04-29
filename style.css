@@ -1,8 +1,9 @@
 
   
   :root{
-    --main: rgb(255, 255, 255);
-    --sec: rgb(81, 5, 233);
+    --title: rgb(255, 255, 255);
+    --subtitle: rgb(81, 5, 233);
+    --text: white;
 
 }
 
@@ -19,7 +20,7 @@
 
 *{    
     font-family: Apfel;
-    color: black;
+    
     overflow: hidden;
 }
 
@@ -161,7 +162,7 @@ html, body, #map {
 
 #title{
 font-size: 10vw;
-color: var(--main);
+color: var(--title);
 font-family: title;
 }
 
@@ -173,38 +174,31 @@ font-family: title;
 }
 
 #choice button{
-    background-color:rgba(205, 61, 61, 0.219);
     border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(130, 130, 130, 0.7);
     padding: .5vw 1vw;
     width: 70%;
     margin: 3vw 0 ;
     font-size: 4vw;
     padding: 2%;
-    text-shadow: .5px .5px 1px #f5f1f193;
-
 }
 
 
 .leaflet-control-attribution a{
     font-size: 10px;
     pointer-events: none;
-    color: var(--sec);
+    color: var(--subtitle);
 }
 
 #showPic{
     bottom: 0;
     width: 60%; 
-     height: 30%;
-    /* border: solid 2px red; */
+    height: 30%;
     position: fixed;
-    /* display: inline; */
 
 }
 #showPic img{
     position: absolute;
     width: 65%;
-    /* height: 5%; */
     top: 1;
     bottom: 0;
     left: 0;
@@ -296,10 +290,10 @@ font-family: title;
 
 
 button{
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--subtitle);
     border-radius: 50px;
     text-decoration: none;
-    box-shadow: 5px 5px 10px rgba(130, 130, 130, 0.7);
+    box-shadow: 5px 5px 10px var(--text);
 }
 
 #instru{
