@@ -353,7 +353,7 @@ let lexicon = L.easyButton('fa-key', function(btn, map){
 },'Lexicon','lexotan').addTo(map);
 
 // SHOW INFO
-L.easyButton('fa-area-chart', function(btn, map){
+L.easyButton('fa-forward', function(btn, map){
   $( "#infoPlace" ).fadeIn()
   if (current == 'x7'){
     $( "#infoPlaceCont" ).html(`<h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)

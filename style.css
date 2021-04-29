@@ -320,11 +320,41 @@ button{
     /* position: absolute; */
     margin-top: 20vw ;
     border: none;
+    box-shadow: none;
 }
 
 #lexotan{
     /* position: absolute; */
     margin-top: 20vw ;
+    box-shadow: none;
 }
 
+#infos{
+    box-shadow: none;
 }
+
+#colophone{
+    box-shadow: none;
+}
+}
+
+.fa.fa-question-circle-o {
+    font-size: 20px;
+    color: #302a32;
+  }
+
+  .fa.fa-info-circle{
+    font-size: 20px;
+    color: #302a32;
+
+  }
+
+  .fa.fa-key{
+    font-size: 20px;
+    color: #302a32;
+  }
+
+  .fa.forward{
+    font-size: 20px;
+    color: #302a32;
+  }
