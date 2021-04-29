@@ -53,6 +53,7 @@
 
     <body>
 
+        <!-- STATIC -->
         <div id="desktop">
             <div class="flex">
                 <h1>EARTHRISE × Zhōuwéi Network</h1>
@@ -184,7 +185,6 @@
         <div id="map"></div>
 
 
-
         <div id="showPicBack">
             <button id='next' style="position: absolute; z-index: 300;" onclick="location.reload()">Next Location</button>
             <div id="extra" style="position: absolute; z-index: 1;"></div>
@@ -193,12 +193,15 @@
             <img id="bigWhite" src="worlds/white.png" />
         </div>
 
-
+        <div id="customPicEnd">
+            <img id="bigWhite" src="worlds/white.png" />
+            <button onclick="realEnd()">Start Again</button>
+        </div>        
 
 
         <script src="app.js" async defer></script>
         <script>
-            $('body').fadeIn();
+            
 
             var intromp3 = new Audio('audio/intro.mp3');
             function intros(){
@@ -210,6 +213,7 @@
                 intromp3.pause()
                 intromp3.currentTime=0;
                 $('#instructions').fadeIn()
+
             }
 
             function reloadIntro(){

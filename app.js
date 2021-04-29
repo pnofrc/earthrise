@@ -217,6 +217,7 @@ let current = currents[0]
 
 
 console.log("current: "+ current)
+console.log("codew: "+ codeword[current])
 
 if (current == 'x7'){
   console.log('going to end')
@@ -240,7 +241,7 @@ showCompleted();
 var svgChoices = ["p1","p2","p3","p4","p5","p6"];
 var doneSvgChoices = []
 
-function showCustomGraph(){
+function showCustomGraph(pic){
   for(pi = 0; pi < svgChoices.length; pi++){ 
     if (Object.keys(co).includes(svgChoices[pi])) { 
       doneSvgChoices.push(svgChoices[pi])
@@ -248,10 +249,10 @@ function showCustomGraph(){
 
   for (const p of doneSvgChoices){
     let value = Cookies.get(p)
-    $("#showPic").append(`<img src="${customIcon[p][value]}"/>`) 
+    $(pic).append(`<img src="${customIcon[p][value]}"/>`) 
   }
 }
-showCustomGraph()
+showCustomGraph("#showPic")
 
 // SET CURRENT STATE IN HTML
 $('#quest').attr('src', audioQuest[current]);
@@ -379,7 +380,7 @@ let bck = customIconBack[current]
 
 function closeMe0(){
   $( "#choice" ).fadeOut();
-  deleteItem()
+  deleteItem();
   let currP = current.replace("x","p");
   console.log(currP);
   Cookies.set(currP,0, { expires: 60 });
@@ -392,7 +393,7 @@ function closeMe0(){
 
 function closeMe1(){
   $( "#choice" ).fadeOut();
-  deleteItem()
+  deleteItem();
   let currP = current.replace("x","p");
   console.log(currP);
   Cookies.set(currP,0, { expires: 60 });
@@ -406,16 +407,21 @@ function closeMe1(){
 
 //END
 function showEnd(){
-  console.log('End')
+  console.log('End');
   $('#end').fadeIn()
 }
 
 // DELETE COOKIES AND END GAME
 function endd(){
-  for(remove=0;remove<8;remove++){
-  Cookies.remove(svgChoices[remove])
-  }
-  Cookies.remove('x7')
-  location.reload()
+    $('#customPicEnd').fadeIn();
+    $('#end').fadeOut()
+    showCustomGraph("#customPicEnd");
 }
 
+function realEnd(){
+  for(remove=0;remove<8;remove++){
+    Cookies.remove(svgChoices[remove])
+    }
+    Cookies.remove('x7');
+    location.reload()
+}
