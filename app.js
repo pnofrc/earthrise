@@ -269,7 +269,7 @@ $("#worldIcon").attr("src",worldIcon[current]);
 // MAP
 
 //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values 
-var map = L.map('map', { scrollWheelZoom: false }).setView([51.90887172801163, 4.486906527767172], 13);
+var map = L.map('map', { scrollWheelZoom: false }).setView([51.90169378926979, 4.467821474386409], 12);
 
 //  add base map tiles from OpenStreetMap and attribution info to 'map' div
 var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -369,16 +369,10 @@ L.easyButton('fa-info-circle', function(btn, map){
   $( "#instructionsButton" ).fadeIn()
 }).addTo(map);
 
-// SHOW CUSTOM GRAPH
-L.easyButton('<img src="icons/buttonPic.png" style="width:16px; ">', function(btn, map){
-  showCustomGraph();
-  $( "#showPic" ).fadeIn()
-}).addTo(map);
-
 // SHOW INFO
 L.easyButton('fa-area-chart', function(btn, map){
   $( "#infoPlace" ).fadeIn()
-  $( "#infoPlace" ).html(`<h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
+  $( "#infoPlaceCont" ).html(`<h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
 }).addTo(map);
 
 // CHOICE POPUP
@@ -400,9 +394,8 @@ function closeMe0(){
   let currP = current.replace("x","p");
   console.log(currP);
   Cookies.set(currP,0, { expires: 60 });
-  $( "#extra" ).fadeIn();
-  $( "#next" ).fadeIn();
 
+  $( "#showPicBack" ).fadeIn();
 
   $("#bigWhite").attr('src', bck);
   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`);
@@ -414,8 +407,8 @@ function closeMe1(){
   let currP = current.replace("x","p");
   console.log(currP);
   Cookies.set(currP,0, { expires: 60 });
-  $( "#extra" ).fadeIn();
-  $( "#next" ).fadeIn();
+
+  $( "#showPicBack" ).fadeIn();
   
   $("#bigWhite").attr('src',bck);
   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`);

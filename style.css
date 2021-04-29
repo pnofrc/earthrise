@@ -40,14 +40,14 @@ html, body, #map {
 
 
 .flex{
-    min-height: 100%;
+    
     justify-content: center;
     align-items: center;
     flex-direction: column;
     display: flex;
     text-align: center;
     position: relative;
-    border: solid red 1px;
+
 
     width: 100%;
     height: 100%;
@@ -65,31 +65,15 @@ html, body, #map {
 
 .flex p{
     position: relative;
-    /* overflow-y: ; */
     font-size: 8vw;
-    /* line-height: 4vw; */
     text-shadow: 2px 2px 4px #f5f1f1;
 }
 
 
-
-#next{
-    display: none;
-}
-.flex2{
-    z-index: 0;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    text-align: center;
-    position: relative;
-}
-
 #colophon{
-    display: none
+    display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #title{
@@ -138,6 +122,27 @@ font-family: title;
     position: fixed;
 }
 
+#showPicBack{
+    width: 100%; 
+    height: 100%;
+    position: fixed;
+    display: none;
+    background-color: #2c272eba;
+}
+
+
+#next{
+    position: absolute;
+    width: 40%;
+    height: 5%;
+    top: 0;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+
 
 #back{
     display: none;
@@ -152,10 +157,14 @@ font-family: title;
 
 #lexicon{
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #audioWorld{
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #instructions{
@@ -169,24 +178,20 @@ font-family: title;
 
 #infoPlace{
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #intro{
     display: none;
+    
 }
 
 #intro img{
     width: 60%;
 }
 
-#extra{
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    margin-top: 0;
-    background-color: #2c272e62;
-    position: relative;
-}
+
 
 
 
