@@ -47,22 +47,30 @@
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 
-        <!-- W3 CSS -->
+        <!-- W3.CSS -->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     </head>
 
     <body>
 
         <!-- STATIC -->
-        <div id="intro" style="position: absolute; z-index: 300;">
+        <div id="intro" style="position: absolute; z-index: 500;">
             <div class="flex">
-                <h1>CLICK THE SHAPE TO START</h1>
-                <img onclick="intros()" src='intro.png' />
-                <button onclick="reloadIntro();">RELOAD</button>
-                <button onclick="skipIntro();">SKIP</button>
+                <h1>EARTHRISE × Zhōuwéi Network</h1>
+                <h2>A Hybrid Reality Game</h2>
+                <p>Use of headphones and mobile data is recommended for best experience.</p>
+                <p>This game can be played in one or multiple days.</p>
+                <p>It will require your full commitment and attention.</p>
+                <p>Click on the icon to start the game.</p>
+                <img onclick="intros()" src='icons/audio.png' style="width: 30%;"/>
+                <br>
+                <div>
+                    <button onclick="reloadIntro();">Reload Audio</button>
+                    <button onclick="skipIntro();">Skip Audio</button>
+                </div>
             </div>
         </div>
-        <div id="instructions">
+        <div id="instructions" style="position: absolute; z-index: 500;">
             <div class="flex">
                 <div class="scroll">
                     <p>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
@@ -134,7 +142,7 @@
                 <button id="firstChoice" onclick="closeMe0()"></button>
                 <button id="secondChoice" onclick="closeMe1()"></button>
         
-                <img id="worldIcon" src="" />
+                <img id="worldIcon" src="" style="filter: invert(100%);"/>
             </div>
         </div>
 
@@ -152,7 +160,7 @@
             <div class="flex">
                 <div>
                     <p id="endText">blablabla</p>
-                    <button onclick="pause()">Closeme</button>
+                    <audio src="audio/outro.mp3"></audio>
                     <button onclick="endd()">ENDGAME</button>
                 </div>
             </div>
@@ -172,7 +180,7 @@
             <div id="extra" style="position: absolute; z-index: 1;"></div>
         </div>    
         <div id="showPic">
-            <img id="bigWhite" style="width: 100%;" src="worlds/white.png" />
+            <img id="bigWhite" src="worlds/white.png" />
         </div>
 
 
@@ -180,6 +188,7 @@
 
         <script src="app.js" async defer></script>
         <script>
+            $('body').fadeIn();
 
             var intromp3 = new Audio('audio/intro.mp3');
             function intros(){

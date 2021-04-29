@@ -37,9 +37,8 @@ var audioWhile = {
   "LatLng(51.906289, 4.442124)":"audio/audioWhile/dragonfly.mp3", //DF
   "LatLng(51.906333, 4.492452)":"audio/audioWhile/dolphinwaves.mp3", //DW
   "LatLng(51.928074, 4.476836)":"audio/audioWhile/dolphinwaves.mp3", //DW
-  "LatLng(51.912516, 4.501322)":"audio/audioWhile/progectgecko.mp3", //PG
-  "LatLng(51.928861, 4.480778)":"audio/audioWhile/progectgecko.mp3", //PG
-  "LatLng(51.916006, 4.476677)":"audio/outro.mp3"
+  "LatLng(51.912516, 4.501322)":"audio/audioWhile/projectgecko.mp3", //PG
+  "LatLng(51.928861, 4.480778)":"audio/audioWhile/projectgecko.mp3", //PG
 }
 
 var audioWhileX = {
@@ -47,9 +46,8 @@ var audioWhileX = {
   "x2":"audio/audioWhile/dragonfly.mp3", //DF
   "x3":"audio/audioWhile/dolphinwaves.mp3", //DW
   "x4":"audio/audioWhile/dolphinwaves.mp3", //DW
-  "x5":"audio/audioWhile/progectgecko.mp3", //PG
-  "x6":"audio/audioWhile/progectgecko.mp3", //PG
-  "x7":"audio/outro.mp3"
+  "x5":"audio/audioWhile/projectgecko.mp3", //PG
+  "x6":"audio/audioWhile/projectgecko.mp3", //PG
 }
 
 var getSymb = {
@@ -67,21 +65,20 @@ var codeword = {
   "x2": 'DESIGN', //DF
   "x3": 'FLOTATION', //DW
   "x4": 'AUTOMATION', //DW
-  "x5": 'EMBODIED', //PG
-  "x6": 'VISIBLE', //PG
+  "x5": 'VISIBLE', //PG
+  "x6": 'EMBODIED', //PG
   "x7": 'COEXIST' //END
 }
 
 var title = {
-    "x1":"Dragonfly // Het Nieuwe Instituut", //DF
-    "x2":"Dragonfly // Dakpark", //DF
-    "x3":"Dolphin Waves // Floating Pavilion", //DW
-    "x4":"Dolphin Waves // Benthemplein", //DW
-    "x5":"Project Gecko // Hef Park", //PG
-    "x6":"Project Gecko // Almondestraat", //PG
+    "x1":"Dragonfly 2041", //DF
+    "x2":"Dragonfly 2041", //DF
+    "x3":"Dolphin Waves 2041", //DW
+    "x4":"Dolphin Waves 2041", //DW
+    "x5":"Project Gecko 2041", //PG
+    "x6":"Project Gecko 2041", //PG
     "x7":"The Roof" //END
 }
-
 
 
 var titleWhile = {
@@ -279,7 +276,7 @@ showCustomGraph()
 
 // SET CURRENT STATE IN HTML
 $('#quest').attr('src', audioQuest[current]);
-$('#textquest').append(textQuest[current])
+// $('#textquest').append(textQuest[current])
 $("#title").append(title[current]);
 
 $("#firstChoice").append(button[current][0]);
@@ -358,27 +355,36 @@ function onLocation() {
 }
 
 
-
-// SHOW LEXICON
-L.easyButton('fa-key', function(btn, map){
-  $( "#lexicon" ).fadeIn()
-}).addTo(map);
-
 // SHOW COLOPHON
 L.easyButton('fa-question-circle-o', function(btn, map){
   $( "#colophon" ).fadeIn()
-}).addTo(map);
+}, 'Colophon', 'colophone').addTo(map);
 
 // SHOW INSTRUCTIONS
 L.easyButton('fa-info-circle', function(btn, map){
   $( "#instructionsButton" ).fadeIn()
-}).addTo(map);
+}, 'Instructions', 'instru').addTo(map);
+
+
+
+
+// SHOW LEXICON
+let lexicon = L.easyButton('fa-key', function(btn, map){
+  $( "#lexicon" ).fadeIn()
+},'Lexicon','lexotan').addTo(map);
 
 // SHOW INFO
 L.easyButton('fa-area-chart', function(btn, map){
   $( "#infoPlace" ).fadeIn()
-  $( "#infoPlaceCont" ).html(`<h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
-}).addTo(map);
+  if (current == 'x7'){
+    $( "#infoPlaceCont" ).html(`<h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
+  } else {
+    $( "#infoPlaceCont" ).html(`<h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
+  }
+  
+}, 'info Place', 'infos').addTo(map);
+
+
 
 // CHOICE POPUP
 var choice = $( "#choice" );
@@ -428,7 +434,3 @@ function endd(){
   location.reload()
 }
 
-// PAUSE THE GAME AT THE END //
-function pause(){
-  $("#end").fadeOut()
-}
