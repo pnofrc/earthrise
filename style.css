@@ -216,7 +216,7 @@ font-family: title;
 }
 
 #customPicEnd{
-    background-color: #30f040;
+    background: linear-gradient(129deg, #562466,#6c729d);
     display: none;
     width: 100%; 
     height: 100%;
@@ -224,7 +224,7 @@ font-family: title;
 }
 
 #customPicEnd img{
-    width: 60%;
+    width: 100%;
     top: 0;
     bottom: 0;
     left: 0;
