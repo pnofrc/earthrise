@@ -1,3 +1,26 @@
+// MAP
+
+//  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values 
+var map = L.map('map', { scrollWheelZoom: false }).setView([51.90169378926979, 4.467821474386409], 12);
+
+//  add base map tiles from OpenStreetMap and attribution info to 'map' div
+var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a>'
+}).addTo(map);
+
+// layer.getContainer().classList.add('w3-sepia');
+layer.getContainer().classList.add('w3-greyscale');
+
+// GPS ON
+map.addControl(L.control.locate({
+    locateOptions: {
+            enableHighAccuracy: true,
+}}));
+
+
+
+
+
 // DICTIONARIES
 var coord = {
     "x1": [51.914444, 4.470009], //DF
@@ -62,12 +85,12 @@ var title = {
 
 
 var titleWhile = {
-  "LatLng(51.914444, 4.470009)":"Dragonfly // Het Nieuwe Instituut", //DF
-  "LatLng(51.906289, 4.442124)":"Dragonfly // Dakpark", //DF
-  "LatLng(51.906333, 4.492452)":"Dolphin Waves // Floating Pavilion", //DW
-  "LatLng(51.928074, 4.476836)":"Dolphin Waves // Benthemplein", //DW
-  "LatLng(51.912516, 4.501322)":"Project Gecko // Hef Park", //PG
-  "LatLng(51.928861, 4.480778)":"Project Gecko // Almondestraat", //PG
+  "LatLng(51.914444, 4.470009)":"Dragonfly 2041", //DF
+  "LatLng(51.906289, 4.442124)":"Dragonfly 2041", //DF
+  "LatLng(51.906333, 4.492452)":"Dolphin Waves 2041", //DW
+  "LatLng(51.928074, 4.476836)":"Dolphin Waves 2041", //DW
+  "LatLng(51.912516, 4.501322)":"Project Gecko 2041", //PG
+  "LatLng(51.928861, 4.480778)":"Project Gecko 2041", //PG
   "LatLng(51.916006, 4.476677)":"The Roof" //END
 }
 
@@ -266,24 +289,6 @@ $("#worldIcon").attr("src",worldIcon[current]);
 
 
 
-// MAP
-
-//  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values 
-var map = L.map('map', { scrollWheelZoom: false }).setView([51.90169378926979, 4.467821474386409], 12);
-
-//  add base map tiles from OpenStreetMap and attribution info to 'map' div
-var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a>'
-}).addTo(map);
-
-layer.getContainer().classList.add('w3-sepia');
-layer.getContainer().classList.add('w3-greyscale');
-
-// GPS ON
-map.addControl(L.control.locate({
-    locateOptions: {
-            enableHighAccuracy: true,
-}}));
 
 
 //to delete the current cookie when you pass the level
