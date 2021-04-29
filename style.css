@@ -1,5 +1,4 @@
 
-  
   :root{
     --title: rgb(255, 255, 255);
     --subtitle: rgb(81, 5, 233);
@@ -20,7 +19,6 @@
 
 *{    
     font-family: Apfel;
-    
     overflow: hidden;
 }
 
@@ -194,8 +192,8 @@ font-family: title;
     width: 60%; 
     height: 30%;
     position: fixed;
-
 }
+
 #showPic img{
     position: absolute;
     width: 65%;

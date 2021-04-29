@@ -19,8 +19,6 @@ map.addControl(L.control.locate({
 
 
 
-
-
 // DICTIONARIES
 var coord = {
     "x1": [51.914444, 4.470009], //DF
@@ -91,15 +89,6 @@ var titleWhile = {
   "LatLng(51.916006, 4.476677)":"The Roof" //END
 }
 
-var textQuest = {
-    "x1":"When the world suffers a collective trauma, and every step on every street reminds you of the harm and pain, what do you do? Do we depend on individuals and our local communities to slowly heal and grow again, or might we depend on artificial influences to stimulate our wellbeing? Should we put hurting memories on scaffolding, building over them to try to erase the pain, or do we leave stretch marks of change?  ", //DF
-    "x2":"Just like the bees and the flowers, we’ve helped humans connect with each other beyond the flowerbeds they would have otherwise stayed in. Letting flowers root beyond the concrete boxes designed for them, finding ways for global ecosystems and collectives to harmonize. Would the bee be a welcome presence in your flowerbed? Or might we have rooted enough?", //DF
-    "x3":"I am trying to read what you are thinking right now. I am watching you from inside the pavilion. I wonder, what would your game world look like? Would you feel this same sensation of excitement of discovering yourself everyday anew? Would you, like I did, move beyond ideas in which only the physical is real and immerse yourself in infinite worlds? Would you allow artificial influences to help you shape realities?", //DW
-    "x4":"Would you agree that everything you can think of is a product of an entire world of influences surrounding you? If so, is your imagination really yours to keep? Might it feel extremely liberating, to leave behind all worries about labour for profit for income to survive, in exchange for a limitless access to your thinking? Or are your thoughts really the sole things that truly are pricelessly yours?", //DW
-    "x5":"Was the chicken first or the egg? ", //PG
-    "x6":"Would you rather fight a horse sized duck or 100 duck sized horses?", //PG
-    "x7":""
-}
 
 var audioQuest = {
   "x1":"audio/audioQuest/DF_hetnieuwe.mp3", //DW
@@ -130,7 +119,7 @@ var icons = {
     "x4":"icons/newlocation.png",
     "x5":"icons/newlocation.png",
     "x6":"icons/newlocation.png",
-    "x7":"icons/newlocation.png"
+    "x7":"icons/location7.png"
 }
 
 // COLORED POINTS
@@ -140,8 +129,7 @@ var newIcon = {
   "x3":"icons/DragonFly.png", //DF
   "x4":"icons/DragonFly.png", //DF
   "x5":"icons/ProjectGecko.png", //PG
-  "x6":"icons/ProjectGecko.png", //PG
-  "x7": "http://www.clker.com/cliparts/J/C/Y/S/Q/R/eye-blue-clipart-hi.png", 
+  "x6":"icons/ProjectGecko.png" //PG
 }
 
 // CUSTOM GRAPH
@@ -215,18 +203,9 @@ function checkCookies(){
 
 
 
-
-//END
-function showEnd(){
-  console.log('End')
-  $('#end').fadeIn()
-}
-
-
 // CURRENT PLACE x^n
 
 var daje = Object.keys(co)
-// console.log(daje)
 let currents = []
 
  for (element=0;element<7;element++){
@@ -276,7 +255,6 @@ showCustomGraph()
 
 // SET CURRENT STATE IN HTML
 $('#quest').attr('src', audioQuest[current]);
-// $('#textquest').append(textQuest[current])
 $("#title").append(title[current]);
 
 $("#firstChoice").append(button[current][0]);
@@ -423,6 +401,13 @@ function closeMe1(){
   
   $("#bigWhite").attr('src',bck);
   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`);
+}
+
+
+//END
+function showEnd(){
+  console.log('End')
+  $('#end').fadeIn()
 }
 
 // DELETE COOKIES AND END GAME
