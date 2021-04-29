@@ -84,6 +84,7 @@ font-family: title;
 #choice{
     display: none;
     height: 100%;
+    width: 100%;
     /* background-color:rgb(66, 194, 104); */
 }
 
