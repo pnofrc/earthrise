@@ -4,7 +4,7 @@
 var map = L.map('map', { scrollWheelZoom: false }).setView([51.90169378926979, 4.467821474386409], 12);
 
 //  add base map tiles from OpenStreetMap and attribution info to 'map' div
-var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+var layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '<a href="http://osm.org/copyright">&copy; OpenStreetMap</a>'
 }).addTo(map);
 
@@ -52,13 +52,13 @@ var audioWhileX = {
 }
 
 var getSymb = {
-  "x1":"Find the encrypted symbol on a concrete pillar at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DF
-  "x2":"Find the encrypted symbol on the backside of the Sign at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DF
-  "x3":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DW
-  "x4":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DW
-  "x5":"Find the encrypted symbol on the backside of one of the stones at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //PG
-  "x6":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //PG
-  "x7":"Find the encrypted symbol on the ceiling of the escape door at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword."
+  "x1":"Find the encrypted symbol on a concrete pillar at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DF
+  "x2":"Find the encrypted symbol on the backside of the Sign at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DF
+  "x3":"Find the encrypted symbol under the bench at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DW
+  "x4":"Find the encrypted symbol under the bench at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DW
+  "x5":"Find the encrypted symbol on the backside of one of the stones at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //PG
+  "x6":"Find the encrypted symbol under the bench at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //PG
+  "x7":"Find the encrypted symbol on the ceiling of the escape door at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword."
 }
 
 var codeword = {
