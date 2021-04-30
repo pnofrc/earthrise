@@ -108,8 +108,8 @@ var button = {
     "x2":["Welcome the Bee","We Have Rooted Enough"], //DF
     "x3":["Immerse Yourself in Infinite Worlds","Stay Grounded Inside Physical World"],//DW
     "x4":["Give Limitless Access in Exchange for Freedom of Labour","Work for Your Money in Order to Keep Ownership of Your Thoughts"], //DW
-    "x5":["Chicken","Egg"], //PG
-    "x6":["100 Horses","1 Horse-Sized Ducks"], //PG
+    "x5":["One centralised structure","Self-governing micro-communities"], //PG
+    "x6":["Body movement as base for interaction","A less uninhibited approach"], //PG
     "x7":""
 
 }
