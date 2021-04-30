@@ -1,6 +1,6 @@
 // MAP
 
-//  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values 
+//  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values
 var map = L.map('map', { scrollWheelZoom: false }).setView([51.90169378926979, 4.467821474386409], 12);
 
 //  add base map tiles from OpenStreetMap and attribution info to 'map' div
