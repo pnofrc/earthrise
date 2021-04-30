@@ -49,6 +49,35 @@
 
         <!-- W3.CSS -->
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+        <style>
+    .flex{-webkit-animation: backGradient 5s ease infinite;
+        -moz-animation: backGradient 5s ease infinite;
+        -o-animation: backGradient 5s ease infinite;
+        animation: backGradient 5s ease infinite;
+    }
+
+    @-webkit-keyframes backGradient {
+        0%{background-position:0% 48%}
+        50%{background-position:100% 53%}
+        100%{background-position:0% 48%}
+    }
+    @-moz-keyframes backGradient {
+        0%{background-position:0% 48%}
+        50%{background-position:100% 53%}
+        100%{background-position:0% 48%}
+    }
+    @-o-keyframes backGradient {
+        0%{background-position:0% 48%}
+        50%{background-position:100% 53%}
+        100%{background-position:0% 48%}
+    }
+    @keyframes backGradient {
+        0%{background-position:0% 48%}
+        50%{background-position:100% 53%}
+        100%{background-position:0% 48%}
+    }
+        </style>
         
     </head>
 
@@ -68,12 +97,13 @@
         <!-- STATIC -->
         <div id="zero">
             <div class="flex">
+            <div id="diocane">
                 <h1>EARTHRISE<br>Zhōuwéi Network</h1>
-                <h2>A Hybrid Reality Game</h2>
                 <br>
-                <img src="intro.png" />
-                <br><br>
+                <h2>A Hybrid Reality Game</h2>
+            </div>
                 <button style='min-width: 100px;' onclick="$('#intro').fadeIn();$('#zero').fadeOut();">START!</button>
+            
             </div>
         </div>
 
@@ -98,7 +128,6 @@
         </div>
 
         <div id="storyline" style="position: absolute; z-index: 500;">
-            <div class="story">
             <div class="flex">
                     <h1>Welcome</h1>
                     <br>                
@@ -106,12 +135,6 @@
                     Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</p>                       
                     <br> 
             <button style='min-width: 100px;' onclick="$('#instructions').fadeIn(); $('#storyline').fadeOut();">Next</button>
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            </div>
         </div>
         </div>
 
@@ -121,13 +144,13 @@
                     <h1>Instructions</h1>   
                     <br>                
                     <p>✧ Smartphone and headphones needed!</p>
-                    <p>✦ Find symbol in given location on map</p>
-                    <p>✧ Translate symbol with dictionary inside app</p>
-                    <p>✦ Enter translation into app</p>
-                    <p>✧ Make contact with guide that will lead you around their community (unlock auto track)</p>
-                    <p>✦ Make choice at end of every audiopiece</p>
-                    <p>✧ Game will give you your next location</p>
-                    <p>✦ Complete six locations for the game to reveal your final spot</p><br>
+                    <p>✦ Find symbols in given location on map</p>
+                    <p>✧ Translate symbols with dictionary inside app 🗝️</p>
+                    <p>✦ Enter translations into the location dot</p>
+                    <p>✧ Make contact with the guide that will lead you around their community</p>
+                    <p>✦ Make your choice at the end of every audiopiece</p>
+                    <p>✧ The game will give you a next location</p>
+                    <p>✦ Complete the six locations to unlock the final one</p><br>
                 </div>
             <button style='min-width: 100px;' onclick="checkCookies(); location.reload()">Start the Game</button>
             </div>
@@ -140,15 +163,15 @@
                 <h1>Instructions</h1>
                 <br>                    
                 <p>✧ Smartphone and headphones needed!</p>
-                <p>✦ Find symbol in given location on map</p>
-                <p>✧ Translate symbol with dictionary inside app</p>
-                <p>✦ Enter translation into app</p>
-                <p>✧ Make contact with guide that will lead you around their community (unlock auto track)</p>
-                <p>✦ Make choice at end of every audiopiece</p>
-                <p>✧ Game will give you your next location</p>
-                <p>✦ Complete six locations for the game to reveal your final spot</p><br>
+                <p>✦ Find symbols in given location on map</p>
+                <p>✧ Translate symbols with dictionary inside app 🗝️</p>
+                <p>✦ Enter translations into the location dot</p>
+                <p>✧ Make contact with the guide that will lead you around their community</p>
+                <p>✦ Make your choice at the end of every audiopiece</p>
+                <p>✧ The game will give you a next location</p>
+                <p>✦ Complete the six locations to unlock the final one</p><br>
                 
-                <button onclick="$('#instructionsButton').fadeOut()">Close Me</button>
+                <button onclick="$('#instructionsButton').fadeOut()">Close</button>
             </div>
         </div>
 
@@ -157,36 +180,39 @@
         <div id="lexicon" style="position: absolute; z-index: 300;">
             <div class="flex">
                 <img src="lexicon.svg" />
-                <button onclick="$('#lexicon').fadeOut()">Close Me</button>
+                <button onclick="$('#lexicon').fadeOut()">Close</button>
             </div>
         </div>
 
         <!-- STATIC -->
         <div id="colophon" style="position: absolute; z-index: 300;">
             <div class="flex">
-                THIS WILL BE A COLOPHON
-                <button onclick="$('#colophon').fadeOut()">Close Me</button>
+                <p>May 2021,</p>
+                <p>EARTHRISE × Zhouwéi Network is a hybrid reality game reacting on the future visions of the film Zhouwéi Network: Embodied Ambitopias by Liminal Vision.</p>
+
+                <p>Liminal Vision is a creative collaboration between Victor Evink (s x m b r a) and Emilia Tapprest (nvisible.studio). Their project Zhouwéi Network is currently showcased at Zero Emissions by 2099, in MAMA, curated by Mary Ponomareva.</p>
+
+                <p>With contributions by Gill Baldwin, Camilo García A. & Federico Poni. Produced by Erik Peters, Ruta Genyte & Louisa Teichmann in collaboration with Roodkapje as part of the Agency & Machine program, MAMA and Mary Ponomareva.</p>
+                <button onclick="$('#colophon').fadeOut()">Close</button>
             </div>
         </div>
 
-        <div id="audioWorld" style="position: absolute; z-index: 300;">
-            <div class="flex">
-                <div id="audioWorldCont"></div>
-            </div>
-        </div>
+        <div id="audioWorld" style="position: absolute; z-index: 300;"></div>
 
         <div id="choice" style="position: absolute; z-index: 300;">
             <div class="flex">
-                <h1 id="title"></h1>
+                <img id="worldIcon" src="" style="filter: invert(100%); width: 65%;"/>
 
+                <h1 id="title"></h1>                
                 <p id="textquest"></p>
 
                 <audio id="quest" src="" controls></audio>
+                
+                <div style="display: flex;">
+                    <button id="firstChoice" onclick="closeMe0()"></button>
+                    <button id="secondChoice" onclick="closeMe1()"></button>
+                </div>
 
-                <button id="firstChoice" onclick="closeMe0()"></button>
-                <button id="secondChoice" onclick="closeMe1()"></button>
-        
-                <img id="worldIcon" src="" style="filter: invert(100%);"/>
             </div>
         </div>
 
@@ -196,11 +222,10 @@
 
         <div id="end">
             <div class="flex">
-                <div>
-                    <h1 id="endText">Build the future, now</h1>
-                    <audio src="audio/outro.mp3"></audio>
+                
+                    <audio src="audio/outro.mp3" controls></audio>
                     <button onclick="endd()">THE END</button>
-                </div>
+            
             </div>
         </div>
 
@@ -213,7 +238,7 @@
 
 
         <div id="showPicBack">
-            <button id='next' style="position: absolute; z-index: 300;" onclick="location.reload()">Next Location</button>
+            <button id='next' style="position: absolute;" onclick="location.reload()">✦✧</button>
             <div id="extra" style="position: absolute; z-index: 1;"></div>
         </div>    
         <div id="showPic">
@@ -222,8 +247,12 @@
 
         <div id="customPicEnd">
             <div class="flex">
-            <h1>2041</h1>
+            <h1 onclick="location.reload()">2021</h1>
+            <div id="customPicEndEnd">
             <img id="bigWhite" src="worlds/white.png" />
+        </div>
+            <h1 onclick="location.reload()">2041</h1>
+
         </div>
         </div>        
 

@@ -37,6 +37,7 @@ var audioWhile = {
   "LatLng(51.928074, 4.476836)":"audio/audioWhile/dolphinwaves.mp3", //DW
   "LatLng(51.912516, 4.501322)":"audio/audioWhile/projectgecko.mp3", //PG
   "LatLng(51.928861, 4.480778)":"audio/audioWhile/projectgecko.mp3", //PG
+  "x7":""
 }
 
 var audioWhileX = {
@@ -46,10 +47,12 @@ var audioWhileX = {
   "x4":"audio/audioWhile/dolphinwaves.mp3", //DW
   "x5":"audio/audioWhile/projectgecko.mp3", //PG
   "x6":"audio/audioWhile/projectgecko.mp3", //PG
+  "x7":""
+
 }
 
 var getSymb = {
-  "x1":" Find the encrypted symbol on a concrete pillar at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DF
+  "x1":"Find the encrypted symbol on a concrete pillar at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DF
   "x2":"Find the encrypted symbol on the backside of the Sign at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DF
   "x3":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DW
   "x4":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DW
@@ -69,42 +72,42 @@ var codeword = {
 }
 
 var title = {
-    "x1":"Dragonfly 2041", //DF
-    "x2":"Dragonfly 2041", //DF
-    "x3":"Dolphin Waves 2041", //DW
-    "x4":"Dolphin Waves 2041", //DW
-    "x5":"Project Gecko 2041", //PG
-    "x6":"Project Gecko 2041", //PG
-    "x7":"The Roof" //END
+    "x1":"Dragonfly<br>2041", //DF
+    "x2":"Dragonfly<br>2041", //DF
+    "x3":"Dolphin Waves<br>2041", //DW
+    "x4":"Dolphin Waves<br>2041", //DW
+    "x5":"Project Gecko<br>2041", //PG
+    "x6":"Project Gecko<br>2041", //PG
+    "x7":"Liminal Realm<br>2041" //END
 }
 
 
 var titleWhile = {
-  "LatLng(51.914444, 4.470009)":"Dragonfly 2041", //DF
-  "LatLng(51.906289, 4.442124)":"Dragonfly 2041", //DF
-  "LatLng(51.906333, 4.492452)":"Dolphin Waves 2041", //DW
-  "LatLng(51.928074, 4.476836)":"Dolphin Waves 2041", //DW
-  "LatLng(51.912516, 4.501322)":"Project Gecko 2041", //PG
-  "LatLng(51.928861, 4.480778)":"Project Gecko 2041", //PG
-  "LatLng(51.916006, 4.476677)":"The Roof" //END
+  "LatLng(51.914444, 4.470009)":"Dragonfly<br>2041", //DF
+  "LatLng(51.906289, 4.442124)":"Dragonfly<br>2041", //DF
+  "LatLng(51.906333, 4.492452)":"Dolphin Waves<br>2041", //DW
+  "LatLng(51.928074, 4.476836)":"Dolphin Waves<br>2041", //DW
+  "LatLng(51.912516, 4.501322)":"Project Gecko<br>2041", //PG
+  "LatLng(51.928861, 4.480778)":"Project Gecko<br>2041", //PG
+  "LatLng(51.916006, 4.476677)":"Liminal Realm<br>2041" //END
 }
 
 
 var audioQuest = {
-  "x1":"audio/audioQuest/DF_hetnieuwe.mp3", //DW
-  "x2":"audio/audioQuest/DF_dakpark.mp3", //DW
-  "x3":"audio/audioQuest/intro.wav", //DF
-  "x4":"audio/audioQuest/intro.wav", //DF
+  "x1":"audio/audioQuest/DF_hetnieuwe.mp3", //DF
+  "x2":"audio/audioQuest/DF_dakpark.mp3", //DF
+  "x3":"audio/audioQuest/intro.wav", //DW
+  "x4":"audio/audioQuest/intro.wav", //DW
   "x5":"audio/audioQuest/intro.wav", //PG
   "x6":"audio/audioQuest/intro.wav", //PG
   "x7":"audio/outro.mp3"
 }
 
 var button = {
-    "x1":["Build Over Them","Leave Stretch Marks"], //DW
-    "x2":["Welcome the Bee","We Have Rooted Enough"], //DW
-    "x3":["Immerse Yourself in Infinite Worlds","Stay Grounded Inside Physical World"],//DF,
-    "x4":["Give Limitless Access in Exchange for Freedom of Labour","Work for Your Money in Order to Keep Ownership of Your Thoughts"], //DF
+    "x1":["Build Over Them","Leave Stretch Marks"], //DF
+    "x2":["Welcome the Bee","We Have Rooted Enough"], //DF
+    "x3":["Immerse Yourself in Infinite Worlds","Stay Grounded Inside Physical World"],//DW
+    "x4":["Give Limitless Access in Exchange for Freedom of Labour","Work for Your Money in Order to Keep Ownership of Your Thoughts"], //DW
     "x5":["Chicken","Egg"], //PG
     "x6":["100 Horses","1 Horse-Sized Ducks"], //PG
     "x7":""
@@ -124,51 +127,75 @@ var icons = {
 
 // COLORED POINTS
 var newIcon = {
-  "x1":"icons/DolphinWaves.png", //DW
-  "x2":"icons/DolphinWaves.png", //DW
-  "x3":"icons/DragonFly.png", //DF
-  "x4":"icons/DragonFly.png", //DF
+  "x1":"icons/DragonFly.png", //DF
+  "x2":"icons/DragonFly.png", //DF
+  "x3":"icons/DolphinWaves.png", //DW
+  "x4":"icons/DolphinWaves.png", //DW
   "x5":"icons/ProjectGecko.png", //PG
-  "x6":"icons/ProjectGecko.png" //PG
+  "x6":"icons/ProjectGecko.png", //PG
+  "x7":""
+
 }
 
 // CUSTOM GRAPH
 
 var customIcon= {
-  "p1":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
-  "p2":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
-  "p3":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
-  "p4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
+  "p1":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
+  "p2":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
+  "p3":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
+  "p4":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
   "p5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
   "p6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
 }
 
+var customX= {
+  "LatLng(51.914444, 4.470009)": 'worlds/Dragon_Fly/DragonFly.svg',
+  "LatLng(51.906289, 4.442124)": 'worlds/Dragon_Fly/DragonFly.svg',
+  "LatLng(51.906333, 4.492452)": "worlds/Dolphin_Waves/DolphinWaves.svg",
+  "LatLng(51.928074, 4.476836)": "worlds/Dolphin_Waves/DolphinWaves.svg",
+  "LatLng(51.928861, 4.480778)": "worlds/Project_Gecko/ProjectGecko.svg",
+  "LatLng(51.916006, 4.476677)": "worlds/Project_Gecko/ProjectGecko.svg",
+}
+
 var customIconBack={
-  "x1": "worlds/bck/DW.png",
-  "x2": "worlds/bck/DW.png",
-  "x3": "worlds/bck/DF.png",
-  "x4": "worlds/bck/DF.png",
+  "x1": "worlds/bck/DF.png",
+  "x2": "worlds/bck/DF.png",
+  "x3": "worlds/bck/DW.png",
+  "x4": "worlds/bck/DW.png",
   "x5": "worlds/bck/PG.png",
   "x6": "worlds/bck/PG.png",
+  "x7":""
 }
 
 var flexBck={
-  "x1": "linear-gradient(129deg, #6e66cf,#fd729f)",
-  "x2": "linear-gradient(129deg, #6e66cf,#fd729f)",
-  "x3": "linear-gradient(129deg, #4342bd,#6e66cf)",
-  "x4": "linear-gradient(129deg, #4342bd,#6e66cf)",
-  "x5": "linear-gradient(129deg, #4fe98d,#8af9b7)",
-  "x6": "linear-gradient(129deg, #4fe98d,#8af9b7)",
-  "x7": "linear-gradient(129deg, #fff191,#fcefc9)"
+  "x1": "linear-gradient(129deg, #1e1d9d,#6e66cf)", //DF
+  "x2": "linear-gradient(129deg, #1e1d9d,#6e66cf)",
+  "x3": "linear-gradient(129deg, #6e66cf,#fd729f)",//DW
+  "x4": "linear-gradient(129deg, #6e66cf,#fd729f)",
+  "x5": "linear-gradient(129deg, #4fe98d,#3a9b73)",//PG
+  "x6": "linear-gradient(129deg, #4fe98d,#3a9b73)",
+  "x7": "linear-gradient(129deg, #d0b580,#fcefc9)"
 }
 
+var flexBckX={
+  "LatLng(51.914444, 4.470009)" : "linear-gradient(129deg, #1e1d9d,#6e66cf)",//DF
+  "LatLng(51.906289, 4.442124)": "linear-gradient(129deg, #1e1d9d,#6e66cf)",
+  "LatLng(51.906333, 4.492452)": "linear-gradient(129deg, #6e66cf,#fd729f)",//DW
+  "LatLng(51.928074, 4.476836)": "linear-gradient(129deg, #6e66cf,#fd729f)",
+  "LatLng(51.912516, 4.501322)": "linear-gradient(129deg, #4fe98d,#3a9b73)",//PG
+  "LatLng(51.928861, 4.480778)": "linear-gradient(129deg, #4fe98d,#3a9b73)",
+  "LatLng(51.916006, 4.476677)": "linear-gradient(129deg, #d0b580,#fcefc9)"
+}
+
+
 var worldIcon= {
-  "x1": "worlds/Dolphin_Waves/DolphinWaves.svg",
-  "x2": "worlds/Dolphin_Waves/DolphinWaves.svg",
-  "x3": 'worlds/Dragon_Fly/DragonFly.svg',
-  "x4": 'worlds/Dragon_Fly/DragonFly.svg',
+  "x1": 'worlds/Dragon_Fly/DragonFly.svg',
+  "x2": 'worlds/Dragon_Fly/DragonFly.svg',
+  "x3": "worlds/Dolphin_Waves/DolphinWaves.svg",
+  "x4": "worlds/Dolphin_Waves/DolphinWaves.svg",
   "x5": "worlds/Project_Gecko/ProjectGecko.svg",
   "x6": "worlds/Project_Gecko/ProjectGecko.svg",
+  "x7":""
 }
 
 let array = ["x1","x2","x3","x4","x5","x6"];
@@ -222,10 +249,10 @@ let currents = []
 let current = currents[0]
 
 //Next Location Info
-if (current == 'x7'){
-  $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
+if (current === 'x7'){
+  $( "#infoPlace" ).html(`<div class="flex"><h3>Last Location Info</h3><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
 } else {
-  $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
+  $( "#infoPlace" ).html(`<div class="flex"><h3>Next Location Info</h3><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
 }
 $( ".flex" ).css("background", flexBck[current])
 $( "#infoPlace" ).fadeIn()
@@ -346,7 +373,8 @@ for (p = 0; p<oldPlaces.length;p++){
 }
 
 function onLocation() {
-  $('#audioWorldCont').html(`<h1>${titleWhile[this.getLatLng()]}</h1><br><audio src='${audioWhile[this.getLatLng()]}' controls></audio><br><button onclick="$('#audioWorld').fadeOut()">Close Me</button>`)
+  $('#audioWorld').html(`<div class="flex"><img src="${customX[this.getLatLng()]}"/><h1>${titleWhile[this.getLatLng()]}</h1><br><audio src='${audioWhile[this.getLatLng()]}' controls></audio><br><button style='min-width: 100px;' onclick="$('#audioWorld').fadeOut()">Close</button></div>`)
+  $( ".flex" ).css("background", flexBckX[this.getLatLng()])
   $('#audioWorld').fadeIn();
 }
 
@@ -373,11 +401,12 @@ let lexicon = L.easyButton('fa-key', function(btn, map){
 L.easyButton('fa-forward', function(btn, map){
   $( "#infoPlace" ).fadeIn()
   if (current == 'x7'){
-    $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Close Me</button></div>`)
+    $( "#infoPlace" ).html(`<div class="flex"><h3>Last Location Info</h3><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Close</button></div>`)
   } else {
-    $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Close Me</button></div>`)
+    $( "#infoPlace" ).html(`<div class="flex"><h3>Next Location Info</h3><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Close</button></div>`)
   }
-  
+  $( ".flex" ).css("background", flexBck[current])
+
 }, 'info Place', 'infos').addTo(map);
 
 
@@ -407,7 +436,9 @@ function closeMe0(){
   $("#bigWhite").attr('src', bck);
   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`);
   $( "img" ).css('top','0');
-  $( "img" ).css('width','80%');
+  $( "img" ).css('width','90%');
+  $( "button" ).css('box-shadow','0px 0px 0px var(--subtitle);');
+
 }
 
 function closeMe1(){
@@ -422,7 +453,9 @@ function closeMe1(){
   $("#bigWhite").attr('src',bck);
   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`);
   $( "img" ).css('top','0');
-  $( "img" ).css('width','80%');
+  $( "img" ).css('width','90%');
+  $( "button" ).css('box-shadow','0px 0px 0px var(--subtitle);');
+
 
 }
 
@@ -430,15 +463,18 @@ function closeMe1(){
 //END
 function showEnd(){
   console.log('End');
+  $('#showPic').fadeOut()
   $('#end').fadeIn()
 }
 
 // DELETE COOKIES AND END GAME
 function endd(){
+    // $("#showPic").fadeOut();
     $('#customPicEnd').fadeIn();
-    $('#end').fadeOut()
-    showCustomGraph("#customPicEnd");
-    $('#customPicEnd').append('<button onclick="realEnd()">Start Again</button>')
+    showCustomGraph("#customPicEndEnd");
+    $('#end').fadeOut();
+    
+    // $('#customPicEnd').append('<button onclick="realEnd()">Start Again</button>')
 
 }
 

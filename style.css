@@ -3,7 +3,9 @@
     --title: rgb(255, 255, 255);
     --subtitle: rgb(0, 0, 0);
     --text: white;
-
+    --titleFont: 10vw;
+    --subtitleFont: 6.5vw;
+    --textFont: 5vw;
 }
 
 @font-face {
@@ -20,7 +22,7 @@
   @font-face {
     font-family: italics;
     src: url("iAWriterDuoS-Italic.woff") format("woff");
-
+    src: url("iAWriterDuoS-Italic.woff2") format("woff2");
   }
 
 *{    
@@ -49,6 +51,8 @@
 
 #instructions{
     display: none;
+    width: 100%;
+    height: 100%;
 }
 
 #instructionsButton{
@@ -61,7 +65,7 @@
 
 .flex{
     
-    justify-content: left;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     display: flex;
@@ -70,41 +74,15 @@
     line-height: 7vw;
 
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     background: linear-gradient(129deg, #c7c7c7,#4b4b4b);
     background-size: 700% 700%;
     padding: 5vw;
     /* border: 10px double var(--main); */
-
-    -webkit-animation: backGradient 5s ease infinite;
-    -moz-animation: backGradient 5s ease infinite;
-    -o-animation: backGradient 5s ease infinite;
-    animation: backGradient 5s ease infinite;
 }
 
 
 
-
-@-webkit-keyframes backGradient {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
-}
-@-moz-keyframes backGradient {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
-}
-@-o-keyframes backGradient {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
-}
-@keyframes backGradient {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
-}
 
 @media only screen and (max-width: 600px) {
 
@@ -116,38 +94,68 @@
         display: none;
     }
 
+    .flex{
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        text-align: left;
+        position: relative;
+        line-height: 7vw;
+        min-width: 100%;
+        min-height: 100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(129deg, #c7c7c7,#4b4b4b);
+        background-size: 700% 700%;
+        padding: 5vw;
+        /* border: 10px double var(--main); */
+    }
+
 
     .flex h1{
         font-family: title;
         text-align: center;
+        line-height: 10vw;
+        font-size: var(--titleFont);
     }
     
     .flex h2{
-        font-family: Arial;
+        font-family: italics;
+        text-align: center;
+        font-size: var(--subtitleFont);
+        margin: 2vw 0 8vw 0;
+    }
+
+    .flex h3{
+        text-align: center;
+        font-family: Apfel;
+        font-size: var(--textFont);
     }
     
     .flex p{
         align-items: left;
         font-family: Apfel;
-        line-height: var(--text);
+        line-height: var(--textFont);
+        font-size: var(--textFont);
         padding: 0;
         margin: 2vw 0 ;
+        width: 95%;
     }
 
 
     #instructions{
         display: none;
+
     }
 
     #storyline{
         display: none;
-
+        width: 100%;
+        height: 100%;
     }
 
-    .story.flex{
-        min-height: 100%;
-        min-width: 100%;
-    }
+
     
     #instructionsButton{
         display: none;
@@ -173,16 +181,6 @@ html, body, #map {
 } 
 
 
-
-
-
-.flex p{
-    position: relative;
-    font-size: 4.7vw;
-    /* text-shadow: 2px 2px 4px #f5f1f1; */
-}
-
-
 #colophon{
     display: none;
     width: 100%;
@@ -191,7 +189,7 @@ html, body, #map {
 
 #title{
 font-size: 10vw;
-color: var(--title);
+color: var(--subtitle);
 font-family: title;
 }
 
@@ -204,12 +202,15 @@ font-family: title;
 
 #choice button{
     border-radius: 10px;
-    padding: .5vw 1vw;
-    width: 70%;
-    margin: 3vw 0 ;
-    font-size: 4vw ;
-    padding: 2%;
+    /* padding: .5vw 1vw; */
+    min-width: 100px;
+    /* margin: 3vw 0 ; */
+    /* font-size: var(); */
+    line-height: var(--textFont);
+    padding: 1.5%;
+    margin: 0 2vw ;
 }
+
 
 
 .leaflet-control-attribution a{
@@ -223,6 +224,7 @@ font-family: title;
     width: 60%; 
     height: 30%;
     position: fixed;
+    z-index: 200;
 }
 
 #showPic img{
@@ -243,18 +245,26 @@ font-family: title;
     height: 100%;
     position: fixed;
     display: none;
-    background-color: #2c272eba;
+    background: #171717;
+
 }
 
 #customPicEnd{
-    background: linear-gradient(129deg, #562466,#6c729d);
+    background: linear-gradient(129deg, #d0b580, #fcefc9);
     display: none;
     width: 100%; 
     height: 100%;
     position: fixed;
 }
+#customPicEndEnd{
+    /* background: linear-gradient(129deg, #d0b580, #fcefc9); */
+    display: none;
+    width: 80%; 
+    height: 80%;
+    /* position: fixed; */
+}
 
-#customPicEnd img{
+#customPicEndEnd img{
     width: 100%;
     top: 0;
     bottom: 0;
@@ -270,19 +280,32 @@ font-family: title;
 
 }
 
-
-
-
-#next{
-    position: absolute;
-    width: 40%;
-    height: 5%;
-    top: 70%;
+#diocane{
+    width: 100%;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    z-index: 5000;
+    z-index: 5000; 
+    /* position: fixed; */
+}
+
+
+
+
+#next{
+    position: relative;
+    /* width: 40%; */
+    height: 5%;
+    top: 0%;
+    bottom: 70%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 7000;
+    background: rgba(0,0,0,0);
+    /* box-shadow: none; */
   }
 
 
@@ -295,17 +318,24 @@ font-family: title;
     width: 100%;
     height: 100%;
     z-index: 400;
-    position: fixed;
+    position: absolute;
+    display: flex;
+    background: linear-gradient(129deg, #d0b580,#fcefc9);
     display: none;
 }
 
 #lexicon{
     display: none;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+}
+#lexicon img{
+    width: 100%;
 }
 
 #audioWorld{
+    z-index: 5000;
+    position: absolute;
     display: none;
     width: 100%;
     height: 100%;
@@ -361,6 +391,11 @@ button{
     box-shadow: 3px 0px 7px var(--subtitle);
 }
 
+.flex button{
+    font-size: 3.5vw;
+    bottom: 2px !important;
+}
+
 #instru{
     /* position: absolute; */
     margin-top: 20vw ;
@@ -381,7 +416,11 @@ button{
 #colophone{
     box-shadow: none;
 }
-}
+
+
+
+
+
 
 .fa.fa-question-circle-o {
     font-size: 20px;
@@ -403,3 +442,5 @@ button{
     font-size: 20px;
     color: #302a32;
   }
+
+}
