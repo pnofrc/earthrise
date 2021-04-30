@@ -94,12 +94,12 @@ var titleWhile = {
 
 
 var audioQuest = {
-  "x1":"audio/audioQuest/DF_hetnieuwe.mp3", //DF
-  "x2":"audio/audioQuest/DF_dakpark.mp3", //DF
-  "x3":"audio/audioQuest/intro.wav", //DW
-  "x4":"audio/audioQuest/intro.wav", //DW
-  "x5":"audio/audioQuest/intro.wav", //PG
-  "x6":"audio/audioQuest/intro.wav", //PG
+  "x1":"audio/audioQuest/DF1.mp3", //DF
+  "x2":"audio/audioQuest/DF2.mp3", //DF
+  "x3":"audio/audioQuest/DW1.mp3", //DW
+  "x4":"audio/audioQuest/DW2.mp3", //DW
+  "x5":"audio/audioQuest/PG1.mp3", //PG
+  "x6":"audio/audioQuest/PG2.mp3", //PG
   "x7":"audio/outro.mp3"
 }
 
