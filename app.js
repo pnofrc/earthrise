@@ -153,13 +153,13 @@ var customIconBack={
 }
 
 var flexBck={
-  "x1": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
-  "x2": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
-  "x3": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
-  "x4": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
-  "x5": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
-  "x6": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
-  "x7": "linear-gradient(129deg, #c7c7c7,#4b4b4b);"
+  "x1": "linear-gradient(129deg, #6e66cf,#fd729f)",
+  "x2": "linear-gradient(129deg, #6e66cf,#fd729f)",
+  "x3": "linear-gradient(129deg, #4342bd,#6e66cf)",
+  "x4": "linear-gradient(129deg, #4342bd,#6e66cf)",
+  "x5": "linear-gradient(129deg, #4fe98d,#8af9b7)",
+  "x6": "linear-gradient(129deg, #4fe98d,#8af9b7)",
+  "x7": "linear-gradient(129deg, #fff191,#fcefc9)"
 }
 
 var worldIcon= {
@@ -189,7 +189,7 @@ console.log(co)
 
 // SHOW INTRO
 if  (Object.entries(co).length === 0){
-  var intro = $( "#intro" );
+  var intro = $( "#zero" );
   if (intro.css('display', 'none') ) {
     intro.fadeIn();
   } 
@@ -223,11 +223,11 @@ let current = currents[0]
 
 //Next Location Info
 if (current == 'x7'){
-  $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
+  $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
 } else {
   $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
 }
-$( ".flex" ).css("background",flexBck[current])
+$( ".flex" ).css("background", flexBck[current])
 $( "#infoPlace" ).fadeIn()
 
 
@@ -373,7 +373,7 @@ let lexicon = L.easyButton('fa-key', function(btn, map){
 L.easyButton('fa-forward', function(btn, map){
   $( "#infoPlace" ).fadeIn()
   if (current == 'x7'){
-    $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button></div>`)
+    $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Close Me</button></div>`)
   } else {
     $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Close Me</button></div>`)
   }
@@ -406,6 +406,8 @@ function closeMe0(){
 
   $("#bigWhite").attr('src', bck);
   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`);
+  $( "img" ).css('top','0');
+  $( "img" ).css('width','80%');
 }
 
 function closeMe1(){
@@ -413,12 +415,15 @@ function closeMe1(){
   deleteItem();
   let currP = current.replace("x","p");
   console.log(currP);
-  Cookies.set(currP,0, { expires: 60 });
+  Cookies.set(currP,1, { expires: 60 });
 
   $( "#showPicBack" ).fadeIn();
   
   $("#bigWhite").attr('src',bck);
   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`);
+  $( "img" ).css('top','0');
+  $( "img" ).css('width','80%');
+
 }
 
 
@@ -433,6 +438,8 @@ function endd(){
     $('#customPicEnd').fadeIn();
     $('#end').fadeOut()
     showCustomGraph("#customPicEnd");
+    $('#customPicEnd').append('<button onclick="realEnd()">Start Again</button>')
+
 }
 
 function realEnd(){
