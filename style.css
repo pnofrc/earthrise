@@ -1,7 +1,7 @@
 
   :root{
     --title: rgb(255, 255, 255);
-    --subtitle: rgb(81, 5, 233);
+    --subtitle: rgb(0, 0, 0);
     --text: white;
 
 }
@@ -13,12 +13,18 @@
 
 @font-face {
     font-family: Apfel;
-    src: url("ApfelGrotezk-Regular.woff") format("woff2"),
-         url("ApfelGrotezk-Regular.woff2") format("woff");
+    src: url("iAWriterDuoS-Regular.woff") format("woff");
+
+  }
+
+  @font-face {
+    font-family: italics;
+    src: url("iAWriterDuoS-Italic.woff") format("woff");
+
   }
 
 *{    
-    font-family: Apfel;
+    
     overflow: hidden;
 }
 
@@ -55,19 +61,19 @@
 
 .flex{
     
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     flex-direction: column;
     display: flex;
-    text-align: center;
+    text-align: left;
     position: relative;
-    line-height: 8vw;
+    line-height: 7vw;
 
     width: 100%;
     min-height: 100%;
-    background: linear-gradient(129deg, #562466,#6c729d);
+    background: linear-gradient(129deg, #c7c7c7,#4b4b4b);
     background-size: 700% 700%;
-    padding: 3vw;
+    padding: 5vw;
     /* border: 10px double var(--main); */
 
     -webkit-animation: backGradient 5s ease infinite;
@@ -75,6 +81,7 @@
     -o-animation: backGradient 5s ease infinite;
     animation: backGradient 5s ease infinite;
 }
+
 
 
 
@@ -110,7 +117,24 @@
     }
 
     .flex{
-        background: linear-gradient(129deg, #562466fa,#6c729de9);
+        /* background: linear-gradient(129deg, #c7c7c7,#777777); */
+    }
+
+    .flex h1{
+        font-family: title;
+        text-align: center;
+    }
+    
+    .flex h2{
+        font-family: Arial;
+    }
+    
+    .flex p{
+        align-items: left;
+        font-family: Apfel;
+        line-height: var(--text);
+        padding: 0;
+        margin: 2vw 0 ;
     }
 
 
@@ -147,7 +171,7 @@ html, body, #map {
 
 .flex p{
     position: relative;
-    font-size: 6vw;
+    font-size: 4.7vw;
     /* text-shadow: 2px 2px 4px #f5f1f1; */
 }
 
@@ -176,7 +200,7 @@ font-family: title;
     padding: .5vw 1vw;
     width: 70%;
     margin: 3vw 0 ;
-    font-size: 4vw;
+    font-size: 4vw ;
     padding: 2%;
 }
 
@@ -313,7 +337,8 @@ button{
     background-color: var(--subtitle);
     border-radius: 50px;
     text-decoration: none;
-    box-shadow: 5px 5px 10px var(--text);
+    color: var(--text);
+    box-shadow: 3px 0px 7px var(--subtitle);
 }
 
 #instru{

@@ -68,13 +68,15 @@
         <!-- STATIC -->
         <div id="intro" style="position: absolute; z-index: 500;">
             <div class="flex">
-                <h1>EARTHRISE × Zhōuwéi Network</h1>
+                <h1>EARTHRISE <br> Zhōuwéi Network</h1>
                 <h2>A Hybrid Reality Game</h2>
-                <p>Use of headphones and mobile data is recommended for best experience.</p>
-                <p>This game can be played in one or multiple days.</p>
-                <p>It will require your full commitment and attention.</p>
-                <p>Click on the icon to start the game.</p>
-                <img onclick="intros()" src='icons/audio.png' style="width: 30%;"/>
+                <p>✦ Use of headphones and mobile data is recommended for best experience.</p>
+                <p>✧ This game can be played in one or multiple days.</p>
+                <p>✦ It will require your full commitment and attention.</p>
+                <p>✧ Click on the icon to start the game.</p>
+                <br>
+                <img onclick="intros()" src='icons/audio.png' style="width: 25%;"/>
+                <br>
                 <br>
                 <div>
                     <button onclick="reloadIntro();">Reload Audio</button>
@@ -85,16 +87,17 @@
         <div id="instructions" style="position: absolute; z-index: 500;">
             <div class="flex">
                 <div class="scroll">
-                    <p>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
+                    <p>Three parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam.<br><br>
                     Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</p>
-                    <p>! Smartphone and headphones needed !</p>
-                    <p>Find symbol in given location on map</p>
-                    <p>translate symbol with dictionary inside app</p>
-                    <p>enter translation into app</p>
-                    <p>make contact with guide that will lead you around their community (unlock auto track)</p>
-                    <p>make choice at end of every audiopiece</p>
-                    <p>game will give you your next location</p>
-                    <p>complete six locations for the game to reveal your final spot</p>
+                    <h1>Instructions</h1>                   
+                    <p>✧ Smartphone and headphones needed!</p>
+                    <p>✦ Find symbol in given location on map</p>
+                    <p>✧ Translate symbol with dictionary inside app</p>
+                    <p>✦ Enter translation into app</p>
+                    <p>✧ Make contact with guide that will lead you around their community (unlock auto track)</p>
+                    <p>✦ Make choice at end of every audiopiece</p>
+                    <p>✧ Game will give you your next location</p>
+                    <p>✦ Complete six locations for the game to reveal your final spot</p><br>
                 </div>
             <button onclick="checkCookies(); location.reload()">Close Me</button>
             </div>
@@ -104,17 +107,15 @@
         <div id="instructionsButton" style="position: absolute; z-index: 300;">
             <div class="flex">
                 
-                    <p>3 parallel future time zones of 2041 are rising from the soil beneath the city of rotterdam<br>
-                    Find the different sceneries which showcase one of these worlds to discover their hidden societies. Learn their secret language and find their hidden messages to make contact and complete the six main locations to be led to the final stage in which you will be trusted with a glimpse of the future. Play it all in one go or spread it out over a few days and return.</p>
-                   <p>! Smartphone and headphones needed !</p>
-                    <p>Find symbol in given location on map</p>
-                    <p>translate symbol with dictionary inside app</p>
-                    <p>enter translation into app</p>
-                    <p>make contact with guide that will lead you around their community (unlock auto track)</p>
-                    <p>make choice at end of every audiopiece</p>
-                   <p>game will give you your next location</p>
-                    <p>complete six locations for the game to reveal your final spot</p>
-                    </p>
+                <h1>Instructions</h1>                   
+                <p>✧ Smartphone and headphones needed!</p>
+                <p>✦ Find symbol in given location on map</p>
+                <p>✧ Translate symbol with dictionary inside app</p>
+                <p>✦ Enter translation into app</p>
+                <p>✧ Make contact with guide that will lead you around their community (unlock auto track)</p>
+                <p>✦ Make choice at end of every audiopiece</p>
+                <p>✧ Game will give you your next location</p>
+                <p>✦ Complete six locations for the game to reveal your final spot</p><br>
                 
                 <button onclick="$('#instructionsButton').fadeOut()">Close Me</button>
             </div>
@@ -159,12 +160,6 @@
         </div>
 
         <div id="infoPlace" style="position: absolute; z-index: 300;">
-            <div class="flex">
-                <h1>Next Location Info</h1>
-                <div class="contents" id="infoPlaceCont">
-                    <button onclick="$('#infoPlace').fadeOut()">Close Me</button>
-                </div>
-            </div>
         </div>
 
 

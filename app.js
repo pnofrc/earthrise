@@ -49,13 +49,13 @@ var audioWhileX = {
 }
 
 var getSymb = {
-  "x1":"look around", //DW
-  "x2":"look around", //DW
-  "x3":"look around", //DF
-  "x4":"look around", //DF
-  "x5":"look around", //PG
-  "x6":"look around", //PG
-  "x7":"look around and take the stairs"
+  "x1":" Find the encrypted symbol on a concrete pillar at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DF
+  "x2":"Find the encrypted symbol on the backside of the Sign at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DF
+  "x3":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DW
+  "x4":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //DW
+  "x5":"Find the encrypted symbol on the backside of one of the stones at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //PG
+  "x6":"Find the encrypted symbol under the bench at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword.", //PG
+  "x7":"Find the encrypted symbol on the ceiling of the escape door at the location shown on the map. Encrypt it using the 🗝️ dictionary to get the codeword."
 }
 
 var codeword = {
@@ -141,7 +141,6 @@ var customIcon= {
   "p4":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
   "p5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
   "p6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
-  "p7":""
 }
 
 var customIconBack={
@@ -151,7 +150,16 @@ var customIconBack={
   "x4": "worlds/bck/DF.png",
   "x5": "worlds/bck/PG.png",
   "x6": "worlds/bck/PG.png",
-  "x7": ""
+}
+
+var flexBck={
+  "x1": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
+  "x2": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
+  "x3": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
+  "x4": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
+  "x5": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
+  "x6": "linear-gradient(129deg, #c7c7c7,#4b4b4b);",
+  "x7": "linear-gradient(129deg, #c7c7c7,#4b4b4b);"
 }
 
 var worldIcon= {
@@ -161,7 +169,6 @@ var worldIcon= {
   "x4": 'worlds/Dragon_Fly/DragonFly.svg',
   "x5": "worlds/Project_Gecko/ProjectGecko.svg",
   "x6": "worlds/Project_Gecko/ProjectGecko.svg",
-  "x7": ""
 }
 
 let array = ["x1","x2","x3","x4","x5","x6"];
@@ -204,7 +211,6 @@ function checkCookies(){
 
 
 // CURRENT PLACE x^n
-
 var daje = Object.keys(co)
 let currents = []
 
@@ -215,7 +221,18 @@ let currents = []
  }
 let current = currents[0]
 
+//Next Location Info
+if (current == 'x7'){
+  $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
+} else {
+  $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Go!</button></div>`)
+}
+$( ".flex" ).css("background",flexBck[current])
+$( "#infoPlace" ).fadeIn()
 
+
+// CHEAT FOR PROGRAMMER
+console.log("Don't cheat, nerd")
 console.log("current: "+ current)
 console.log("codew: "+ codeword[current])
 
@@ -356,9 +373,9 @@ let lexicon = L.easyButton('fa-key', function(btn, map){
 L.easyButton('fa-forward', function(btn, map){
   $( "#infoPlace" ).fadeIn()
   if (current == 'x7'){
-    $( "#infoPlaceCont" ).html(`<h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
+    $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button></div>`)
   } else {
-    $( "#infoPlaceCont" ).html(`<h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button onclick="$('#infoPlace').fadeOut()">Close Me</button>`)
+    $( "#infoPlace" ).html(`<div class="flex"><h1>Next Location Info</h1><br><h1>${title[current]}</h1><br><audio src="${audioWhileX[current]}" controls></audio><br><p>${getSymb[current]}</p><br><button style='min-width: 100px;' onclick="$('#infoPlace').fadeOut()">Close Me</button></div>`)
   }
   
 }, 'info Place', 'infos').addTo(map);
