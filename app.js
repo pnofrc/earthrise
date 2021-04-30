@@ -471,6 +471,7 @@ function showEnd(){
 function endd(){
     // $("#showPic").fadeOut();
     $('#customPicEnd').fadeIn();
+    $('#customPicEndEnd').fadeIn();
     showCustomGraph("#customPicEndEnd");
     $('#end').fadeOut();
     
