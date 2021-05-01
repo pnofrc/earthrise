@@ -58,7 +58,7 @@ var getSymb = {
   "x4":"Find the encrypted symbol under the bench at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DW
   "x5":"Find the encrypted symbol on the backside of one of the stones at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //PG
   "x6":"Find the encrypted symbol under the bench at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //PG
-  "x7":"Find the encrypted symbol on the ceiling of the escape door at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword."
+  "x7":"Find the encrypted symbol on the ceiling of the escape door on the top floor of the location shown. Decrypt it using the 🗝️ dictionary to get the codeword. "
 }
 
 var codeword = {
