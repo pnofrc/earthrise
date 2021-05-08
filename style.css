@@ -25,28 +25,31 @@
     src: url("iAWriterDuoS-Italic.woff2") format("woff2");
   }
 
-*{    
-    
-    overflow: hidden;
-}
+
 
 #desktop{
-    display: inline;
+    display: flex;
     position: absolute;
     z-index: 2000 !important;
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 #desktop h1{
     line-height: 0;
+    font-family: title;
+}
+
+#desktop h2{
+text-align: center;
 }
 
 
 #desktop img{
     width: 50%;
+    z-index: 1000 !important;
+
 }
 
 #instructions{
@@ -82,6 +85,11 @@
     /* border: 10px double var(--main); */
 }
 
+#based{
+    display: none;
+}
+
+
 
 
 
@@ -93,6 +101,10 @@
 
     #desktop{
         display: none;
+    }
+
+    #based{
+        display: inline;
     }
 
     .flex{
@@ -332,6 +344,9 @@ font-family: title;
 }
 #lexicon img{
     width: 100%;
+}
+#lexicon button{
+    position: fixed;
 }
 
 #audioWorld{
