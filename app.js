@@ -21,7 +21,7 @@ map.addControl(L.control.locate({
 
 // DICTIONARIES
 var coord = {
-    "x1": [51.914444, 4.470009], //DF
+    "x1": [51.9149640, 4.4707350], //DF
     "x2": [51.906289, 4.442124], //DF
     "x3": [51.906333, 4.492452], //DW
     "x4": [51.928074, 4.476836], //DW
@@ -31,7 +31,7 @@ var coord = {
 }
 
 var audioWhile = {
-  "LatLng(51.914444, 4.470009)":"audio/audioWhile/dragonfly.mp3", //DF
+  "LatLng(51.9149640, 4.4707350)":"audio/audioWhile/dragonfly.mp3", //DF
   "LatLng(51.906289, 4.442124)":"audio/audioWhile/dragonfly.mp3", //DF
   "LatLng(51.906333, 4.492452)":"audio/audioWhile/dolphinwaves.mp3", //DW
   "LatLng(51.928074, 4.476836)":"audio/audioWhile/dolphinwaves.mp3", //DW
