@@ -1,7 +1,7 @@
 // MAP 
 
 //  create map object, tell it to live in 'map' div and give initial latitude, longitude, zoom values 
-var map = L.map('map', { scrollWheelZoom: false }).setView([51.90169378926979, 4.467821474386409], 12);
+var map = L.map('map', { scrollWheelZoom: false }).setView([51.937913743795015, 4.4499489649703685], 15);
 
 //  add base map tiles from OpenStreetMap and attribution info to 'map' div
 var layer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -21,22 +21,22 @@ map.addControl(L.control.locate({
 
 // DICTIONARIES
 var coord = {
-    "x1": [51.9149640, 4.4707350], //DF
-    "x2": [51.906289, 4.442124], //DF
-    "x3": [51.906333, 4.492452], //DW
-    "x4": [51.928074, 4.476836], //DW
-    "x5": [51.912516, 4.501322], //PG
-    "x6": [51.928861, 4.480778], //PG
+    "x1": [51.935872, 4.450348], //DF
+    "x2": [51.9362931,4.4454543], //DF
+    "x3": [51.9365196,4.4431771], //DW
+    "x4": [51.9384935,4.4440943], //DW
+    "x5": [51.9411234,4.4422231], //PG
+    "x6": [51.940813, 4.437955], //PG
     "x7": [51.916006, 4.476677] //END
 }
 
 var audioWhile = {
-  "LatLng(51.9149640, 4.4707350)":"audio/audioWhile/dragonfly.mp3", //DF
-  "LatLng(51.906289, 4.442124)":"audio/audioWhile/dragonfly.mp3", //DF
-  "LatLng(51.906333, 4.492452)":"audio/audioWhile/dolphinwaves.mp3", //DW
-  "LatLng(51.928074, 4.476836)":"audio/audioWhile/dolphinwaves.mp3", //DW
-  "LatLng(51.912516, 4.501322)":"audio/audioWhile/projectgecko.mp3", //PG
-  "LatLng(51.928861, 4.480778)":"audio/audioWhile/projectgecko.mp3", //PG
+  "LatLng(51.935872, 4.450348)":"audio/audioWhile/dragonfly.mp3", //DF
+  "LatLng(51.9362931,4.4454543)":"audio/audioWhile/dragonfly.mp3", //DF
+  "LatLng(51.9365196,4.4431771)":"audio/audioWhile/dolphinwaves.mp3", //DW
+  "LatLng(51.9384935,4.4440943)":"audio/audioWhile/dolphinwaves.mp3", //DW
+  "LatLng(51.9411234,4.4422231)":"audio/audioWhile/projectgecko.mp3", //PG
+  "LatLng(51.940813, 4.437955)":"audio/audioWhile/projectgecko.mp3", //PG
   "x7":""
 }
 
@@ -52,44 +52,44 @@ var audioWhileX = {
 }
 
 var getSymb = {
-  "x1":"Find the encrypted symbol on a concrete pillar at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DF
-  "x2":"Find the encrypted symbol on the backside of the Sign at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DF
-  "x3":"Find the encrypted symbol under the bench at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DW
-  "x4":"Find the encrypted symbol on the trash bin at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //DW
-  "x5":"Find the encrypted symbol on the backside of one of the stones at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //PG
-  "x6":"Find the encrypted symbol on the trash bin at the location shown on the map. Decrypt it using the 🗝️ dictionary to get the codeword.", //PG
-  "x7":"Find the encrypted symbol on the ceiling of the escape door on the top floor of the location shown. Decrypt it using the 🗝️ dictionary to get the codeword. "
+  "x1":"Step on the marked spot on the given location and look towards the black and white pillar. What word appears? Enter it by tapping on the icon.", //DF
+  "x2":"Step on the marked spot on the given location and look towards the black and white pillar. What word appears? Enter it by tapping on the icon.", //DF
+  "x3":"Step on the marked spot on the given location and look towards the black and white pillar. What word appears? Enter it by tapping on the icon.", //DW
+  "x4":"Step on the marked spot on the given location and look towards the black and white pillar. What word appears? Enter it by tapping on the icon.", //DW
+  "x5":"Step on the marked spot on the given location and look towards the black and white pillar. What word appears? Enter it by tapping on the icon.", //PG
+  "x6":"Step on the marked spot on the given location and look towards the black and white pillar. What word appears? Enter it by tapping on the icon.", //PG
+  "x7":""
 }
 
 var codeword = {
-  "x1": 'SAFETY', //DF
-  "x2": 'DESIGN', //DF
-  "x3": 'FLOTATION', //DW
-  "x4": 'AUTOMATION', //DW
-  "x5": 'VISIBLE', //PG
-  "x6": 'EMBODIED', //PG
-  "x7": 'COEXIST' //END
+  "x1": 'FORWARD', //DF
+  "x2": 'FROG', //DF
+  "x3": '', //DW
+  "x4": 'DE SPEELMAN', //DW
+  "x5": 'HEART', //PG
+  "x6": 'STORK', //PG
+  "x7": '' //END
 }
 
 var title = {
-    "x1":"Dragonfly<br>2041", //DF
-    "x2":"Dragonfly<br>2041", //DF
-    "x3":"Dolphin Waves<br>2041", //DW
-    "x4":"Dolphin Waves<br>2041", //DW
-    "x5":"Project Gecko<br>2041", //PG
-    "x6":"Project Gecko<br>2041", //PG
-    "x7":"Liminal Realm<br>2041" //END
+    "x1":"Location 1", //DF
+    "x2":"Location 2", //DF
+    "x3":"Location 3", //DW
+    "x4":"Location 4", //DW
+    "x5":"Location 5", //PG
+    "x6":"Location 6", //PG
+    "x7":"FINAL" //END
 }
 
 
 var titleWhile = {
-  "LatLng(51.914444, 4.470009)":"Dragonfly<br>2041", //DF
-  "LatLng(51.906289, 4.442124)":"Dragonfly<br>2041", //DF
-  "LatLng(51.906333, 4.492452)":"Dolphin Waves<br>2041", //DW
-  "LatLng(51.928074, 4.476836)":"Dolphin Waves<br>2041", //DW
-  "LatLng(51.912516, 4.501322)":"Project Gecko<br>2041", //PG
-  "LatLng(51.928861, 4.480778)":"Project Gecko<br>2041", //PG
-  "LatLng(51.916006, 4.476677)":"Liminal Realm<br>2041" //END
+  "LatLng(51.914444, 4.470009)":"Location 1", //DF
+  "LatLng(51.906289, 4.442124)":"Location 2", //DF
+  "LatLng(51.906333, 4.492452)":"Location 3", //DW
+  "LatLng(51.928074, 4.476836)":"Location 4", //DW
+  "LatLng(51.912516, 4.501322)":"Location 5", //PG
+  "LatLng(51.928861, 4.480778)":"Location 6", //PG
+  "LatLng(51.916006, 4.476677)":"FINAL" //END
 }
 
 
@@ -104,49 +104,39 @@ var audioQuest = {
 }
 
 var button = {
-    "x1":["Build Over Them","Leave Stretch Marks"], //DF
-    "x2":["Welcome the Bee","We Have Rooted Enough"], //DF
-    "x3":["Immerse Yourself in Infinite Worlds","Stay Grounded Inside Physical World"],//DW
-    "x4":["Give Limitless Access in Exchange for Freedom of Labour","Work for Your Money in Order to Keep Ownership of Your Thoughts"], //DW
-    "x5":["One centralised structure","Self-governing micro-communities"], //PG
-    "x6":["Body movement as base for interaction","A less uninhibited approach"], //PG
+    "x1":["NEXT LOCATION"], //DF
+    "x2":["NEXT LOCATION"], //DF
+    "x3":["NEXT LOCATION"],//DW
+    "x4":["NEXT LOCATION"], //DW
+    "x5":["NEXT LOCATION"], //PG
+    "x6":["NEXT LOCATION"], //PG
     "x7":""
 
 }
 
 // BLACK POINT
 var icons = {
-    "x1":"icons/newlocation.png",
-    "x2":"icons/newlocation.png",
-    "x3":"icons/newlocation.png",
-    "x4":"icons/newlocation.png",
-    "x5":"icons/newlocation.png",
-    "x6":"icons/newlocation.png",
-    "x7":"icons/location7.png"
+    "x1":"icons/newlocation1.png",
+    "x2":"icons/newlocation1.png",
+    "x3":"icons/newlocation1.png",
+    "x4":"icons/newlocation1.png",
+    "x5":"icons/newlocation1.png",
+    "x6":"icons/newlocation1.png",
+    "x7":"icons/final.png"
 }
 
 // COLORED POINTS
 var newIcon = {
-  "x1":"icons/DragonFly.png", //DF
-  "x2":"icons/DragonFly.png", //DF
-  "x3":"icons/DolphinWaves.png", //DW
-  "x4":"icons/DolphinWaves.png", //DW
-  "x5":"icons/ProjectGecko.png", //PG
-  "x6":"icons/ProjectGecko.png", //PG
+  "x1":"icons/newlocation2.png", //DF
+  "x2":"icons/newlocation2.png", //DF
+  "x3":"icons/newlocation2.png", //DW
+  "x4":"icons/newlocation2.png", //DW
+  "x5":"icons/newlocation2.png", //PG
+  "x6":"icons/newlocation2.png", //PG
   "x7":""
 
 }
 
-// CUSTOM GRAPH
-
-var customIcon= {
-  "p1":['worlds/Dragon_Fly/1-01.svg','worlds/Dragon_Fly/1-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
-  "p2":['worlds/Dragon_Fly/2-01.svg','worlds/Dragon_Fly/2-02.svg','worlds/Dragon_Fly/DragonFly.svg'],
-  "p3":["worlds/Dolphin_Waves/1-01.svg","worlds/Dolphin_Waves/1-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
-  "p4":["worlds/Dolphin_Waves/2-01.svg","worlds/Dolphin_Waves/2-02.svg","worlds/Dolphin_Waves/DolphinWaves.svg"],
-  "p5":["worlds/Project_Gecko/1-01.svg","worlds/Project_Gecko/1-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
-  "p6":["worlds/Project_Gecko/2-01.svg","worlds/Project_Gecko/2-02.svg","worlds/Project_Gecko/ProjectGecko.svg"],
-}
 
 var customX= {
   "LatLng(51.914444, 4.470009)": 'worlds/Dragon_Fly/DragonFly.svg',
@@ -157,15 +147,7 @@ var customX= {
   "LatLng(51.916006, 4.476677)": "worlds/Project_Gecko/ProjectGecko.svg",
 }
 
-var customIconBack={
-  "x1": "worlds/bck/DF.png",
-  "x2": "worlds/bck/DF.png",
-  "x3": "worlds/bck/DW.png",
-  "x4": "worlds/bck/DW.png",
-  "x5": "worlds/bck/PG.png",
-  "x6": "worlds/bck/PG.png",
-  "x7":""
-}
+
 
 var flexBck={
   "x1": "linear-gradient(129deg, #1e1d9d,#6e66cf)", //DF
@@ -198,20 +180,19 @@ var worldIcon= {
   "x7":""
 }
 
-let array = ["x1","x2","x3","x4","x5","x6"];
+let array = ["x1","x2","x3","x4","x5","x6","x7"];
 
-// SHUFFLE
-function shuffleArray(arr) {
-    arr.sort(() => Math.random() - 0.5);
-  }
+// // SHUFFLE
+// function shuffleArray(arr) {
+//     arr.sort(() => Math.random() - 0.5);
+//   }
 
-shuffleArray(array)
+// shuffleArray(array)
 
 
 // COOKIES
 let co = Cookies.get();
 console.log(co)
-
 
 
 // SHOW INTRO
@@ -225,10 +206,11 @@ if  (Object.entries(co).length === 0){
 }
 
 
+// Set Cookies
 function checkCookies(){
   if (Object.entries(co).length === 0){
-     //var shuffleArr = shuffleArray(arr)
-    array.push('x7')
+    //  var shuffleArr = shuffleArray(arr)
+    // array.push('x7')
     for (c=0; c<7; c++){
       let r = array[c] 
       Cookies.set(r,r,  { expires: 60 });}
@@ -242,9 +224,9 @@ var daje = Object.keys(co)
 let currents = []
 
  for (element=0;element<7;element++){
-  if (daje[element].startsWith('x')){
+  // if (daje[element].startsWith('x')){
     currents.push(daje[element])
-  }
+  // }
  }
 let current = currents[0]
 
@@ -281,35 +263,31 @@ function showCompleted(){
 
 showCompleted();
 
-// SHOW STACK OF SVG | CUSTOM GRAPH
-var svgChoices = ["p1","p2","p3","p4","p5","p6"];
-var doneSvgChoices = []
+// // SHOW STACK OF SVG | CUSTOM GRAPH
+// var svgChoices = ["p1","p2","p3","p4","p5","p6"];
+// var doneSvgChoices = []
 
-function showCustomGraph(pic){
-  for(pi = 0; pi < svgChoices.length; pi++){ 
-    if (Object.keys(co).includes(svgChoices[pi])) { 
-      doneSvgChoices.push(svgChoices[pi])
-    }}
+// function showCustomGraph(pic){
+//   for(pi = 0; pi < svgChoices.length; pi++){ 
+//     if (Object.keys(co).includes(svgChoices[pi])) { 
+//       doneSvgChoices.push(svgChoices[pi])
+//     }}
 
-  for (const p of doneSvgChoices){
-    let value = Cookies.get(p)
-    $(pic).append(`<img src="${customIcon[p][value]}"/>`) 
-  }
-}
-showCustomGraph("#showPic")
+//   for (const p of doneSvgChoices){
+//     let value = Cookies.get(p)
+//     $(pic).append(`<img src="${customIcon[p][value]}"/>`) 
+//   }
+// }
+// showCustomGraph("#showPic")
 
 // SET CURRENT STATE IN HTML
 $('#quest').attr('src', audioQuest[current]);
 $("#title").append(title[current]);
 
 $("#firstChoice").append(button[current][0]);
-$("#secondChoice").append(button[current][1]);
+// $("#secondChoice").append(button[current][1]);
 
-$("#worldIcon").attr("src",worldIcon[current]);
-
-
-
-
+$("#worldIcon").attr("src","worlds/star-highres.png");
 
 //to delete the current cookie when you pass the level
 function deleteItem(){
@@ -328,6 +306,7 @@ var textbox = $('<input type="text" placeholder="codeword" />').keyup(function (
   if (event.keyCode === 13 && $(textbox).val().toUpperCase() === codeword[current]){
     choiceToggle()
     marker.removeFrom(map)
+    // deleteItem()
   }}
 })[0];
 
@@ -393,9 +372,9 @@ L.easyButton('fa-info-circle', function(btn, map){
 
 
 // SHOW LEXICON
-let lexicon = L.easyButton('fa-key', function(btn, map){
-  $( "#lexicon" ).fadeIn()
-},'Lexicon','lexotan').addTo(map);
+// let lexicon = L.easyButton('fa-key', function(btn, map){
+//   $( "#lexicon" ).fadeIn()
+// },'Lexicon','lexotan').addTo(map);
 
 // SHOW INFO
 L.easyButton('fa-forward', function(btn, map){
@@ -422,42 +401,42 @@ function choiceToggle() {
 
 // STORE CHOICE QUEST AND SHOW ONGOING CUSTOM GRAPH
 
-let bck = customIconBack[current]
+// let bck = customIconBack[current]
 
 function closeMe0(){
   $( "#choice" ).fadeOut();
   deleteItem();
-  let currP = current.replace("x","p");
-  console.log(currP);
-  Cookies.set(currP,0, { expires: 60 });
+  // let currP = current.replace("x","p");
+  // console.log(currP);
+  // Cookies.set(currP,0, { expires: 60 });
 
-  $( "#showPicBack" ).fadeIn();
+  // $( "#showPicBack" ).fadeIn();
 
-  $("#bigWhite").attr('src', bck);
-  $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`);
+  // $("#bigWhite").attr('src', bck);
+  // $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][0]}"/>`);
   $( "img" ).css('top','0');
   $( "img" ).css('width','90%');
   $( "button" ).css('box-shadow','0px 0px 0px var(--subtitle);');
+  $("button").click(location.reload())
+
 
 }
 
-function closeMe1(){
-  $( "#choice" ).fadeOut();
-  deleteItem();
-  let currP = current.replace("x","p");
-  console.log(currP);
-  Cookies.set(currP,1, { expires: 60 });
+// function closeMe1(){
+//   $( "#choice" ).fadeOut();
+//   deleteItem();
+//   let currP = current.replace("x","p");
+//   console.log(currP);
+//   Cookies.set(currP,1, { expires: 60 });
 
-  $( "#showPicBack" ).fadeIn();
+//   $( "#showPicBack" ).fadeIn();
   
-  $("#bigWhite").attr('src',bck);
-  $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`);
-  $( "img" ).css('top','0');
-  $( "img" ).css('width','90%');
-  $( "button" ).css('box-shadow','0px 0px 0px var(--subtitle);');
-
-
-}
+//   $("#bigWhite").attr('src',bck);
+//   $("#showPic").append(`<img style="filter:invert(100%)" src="${customIcon[currP][1]}"/>`);
+//   $( "img" ).css('top','0');
+//   $( "img" ).css('width','90%');
+//   $( "button" ).css('box-shadow','0px 0px 0px var(--subtitle);');
+// }
 
 
 //END
