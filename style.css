@@ -2,7 +2,7 @@
   :root{
     --title: rgb(255, 255, 255);
     --subtitle: rgb(0, 0, 0);
-    --text: #d1733b;
+    --text: white;
     --titleFont: 10vw;
     --subtitleFont: 6.5vw;
     --textFont: 5vw;
@@ -10,21 +10,22 @@
 
 @font-face {
     font-family: title;
-    src: url("PixelTakhisis-ZajJ.ttf");
+    src: url("Autopia-Italic.otf");
   }
 
 @font-face {
     font-family: Apfel;
-    src: url("PixelTakhisis-ZajJ.ttf") format("ttf");
+    src: url("iAWriterDuoS-Regular.woff") format("woff");
+
   }
 
   @font-face {
-    font-family: Tiny;
-    src: url("TinyIslanders-nOYg.ttf") format("ttf");
+    font-family: italics;
+    src: url("iAWriterDuoS-Italic.woff") format("woff");
+    src: url("iAWriterDuoS-Italic.woff2") format("woff2");
   }
 
-#weather{position: relative;
-margin-top: 200px}
+
 
 #desktop{
     display: flex;
@@ -41,8 +42,7 @@ margin-top: 200px}
 }
 
 #desktop h2{
-    text-align: center;
-    font-family: Tiny;
+text-align: center;
 }
 
 
@@ -79,7 +79,7 @@ margin-top: 200px}
     min-height: 100%;
     width: 100%;
     height: 100%;
-    background: white;
+    background: linear-gradient(129deg, #c7c7c7,#4b4b4b);
     background-size: 700% 700%;
     padding: 5vw;
     /* border: 10px double var(--main); */
@@ -96,8 +96,7 @@ margin-top: 200px}
 @media only screen and (max-width: 600px) {
 
     *{    
-        overflow:initial;
-       
+        overflow:initial
     }
 
     #desktop{
@@ -120,7 +119,7 @@ margin-top: 200px}
         min-height: 100%;
         width: 100%;
         height: 100%;
-        background: white;
+        background: linear-gradient(129deg, #c7c7c7,#4b4b4b);
         background-size: 700% 700%;
         padding: 5vw;
         /* border: 10px double var(--main); */
@@ -232,7 +231,7 @@ font-family: title;
     pointer-events: none;
     color: var(--subtitle);
 }
-/* 
+
 #showPic{
     bottom: 0;
     width: 60%; 
@@ -252,7 +251,7 @@ font-family: title;
     
     z-index: 2; 
     position: fixed;
-} */
+}
 
 #showPicBack{
     width: 100%; 
@@ -358,25 +357,13 @@ font-family: title;
     height: 100%;
 }
 
-#worldIcon{
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
-}
-
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
 #instructions{
     display: none;
     z-index: 2000;
-    
 }
 
 #instructionsButton{
     display: none;
-    height: 100vh;
 }
 
 #infoPlace{
